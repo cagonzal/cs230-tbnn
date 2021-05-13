@@ -15,6 +15,8 @@ nu = 1 * 10**(-4) # from the data file
 # y/delta, y+, U, dU/dy, W, P
 #meanData = ld.load_data(filepath_mean, Ny, 6)
 y, U, dUdy = ld.load_mean_data(filepath_mean, Ny)
+print("y has shape " + str(y.shape))
+print("U has shape " + str(U.shape))
 
 # y/delta, y+, u'u', v'v', w'w', u'v', u'w', v'w', k
 flucData = ld.load_data(filepath_fluc, Ny, 9)
@@ -23,8 +25,13 @@ flucData = ld.load_data(filepath_fluc, Ny, 9)
 vol = pd.compute_cell_volumes(y, Ny)
 
 gradu = pd.compute_gradu(dUdy, Ny)
+print("gradu has shape " + str(gradu.shape))
 aij, bij = pd.compute_bij(flucData, Ny)
+print("aij has shape " + str(aij.shape))
+print("bij has shape " + str(bij.shape))
 tke = pd.compute_tke(flucData, Ny)
+tke = np.squeeze(tke)
+print("tke has shape " + str(tke.shape))
 
 sij, oij = pd.compute_rate_tensors(gradu, Ny)
 eps = pd.compute_dissipation(sij, nu, Ny)
@@ -32,7 +39,10 @@ nut = pd.compute_nut(aij, sij, Ny)
 
 shat, rhat = pd.normalize_rate_tensors(sij, oij, tke, eps, Ny)
 
-lam, tb = pd.compute_qoi(shat, rhat, Ny)
+lam, tb = pd.compute_qoi(sij, oij, Ny)
+print("lam has shape " + str(lam.shape))
+print("tb has shape " + str(tb.shape))
+
 # lam = scalar invariants, tb = tensor basis
 
 
@@ -50,7 +60,8 @@ def trainNetwork(x_train, tb_train, b_train, x_dev, tb_dev, b_dev,
     # comprehensive list, with all flags that can be prescribed
     FLAGS = {} # FLAGS is a dictionary with the following keys:
     
-    FLAGS['num_features'] = 7 # number of features to be used
+    # num features used to be 7
+    FLAGS['num_features'] = 3 # number of features to be used
     FLAGS['num_basis'] = 10 # number of tensor basis in the expansion
     FLAGS['num_layers'] = 8 # number of hidden layers
     FLAGS['num_neurons'] = 30 # number of hidden units in each layer
@@ -116,7 +127,7 @@ def applyNetwork(x_test, tb_test, b_test, gradu_test, nut_test, tke_test):
 
     # train the TBNN on r=2 data (with r=1.5 as the dev set)
 print("")
-print("Training TBNN on baseline jet r=2 data...")
+print("Training TBNN on baseline Re_tau=550 channel data...")
 trainNetwork(lam, tb, bij, lam, tb, bij)
     #trainNetwork(x_r2, tb_r2, b_r2, x_r1p5, tb_r1p5, b_r1p5)    
     #trainNetwork(x_r2, tb_r2, b_r2, x_r1p5, tb_r1p5, b_r1p5, vol_r2, vol_r1)
@@ -127,5 +138,5 @@ trainNetwork(lam, tb, bij, lam, tb, bij)
 print("")
 print("Applying trained TBNN on baseline jet r=1 data...")
     #applyNetwork(x_r1, tb_r1, b_r1, gradu_r1, nut_r1, tke_r1)
-applyNetwork(lam, tb, bij, lam, tb, bij)
+#applyNetwork(lam, tb, bij, lam, tb, bij)
 

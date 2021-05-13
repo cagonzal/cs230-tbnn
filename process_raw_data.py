@@ -47,22 +47,27 @@ def compute_invariants(shat,rhat):
     '''
 
 
-    lam = np.empty([1,7])
-    lam[0,0] = np.trace(shat)
-    lam[0,1] = np.trace(shat @ shat)
-    lam[0,2] = np.trace(shat @ shat @shat)
-    lam[0,3] = np.trace(rhat @ rhat)
-    lam[0,4] = np.trace(rhat @ rhat @ shat)
-    lam[0,5] = np.trace(rhat @ rhat @ shat @ shat)
-    lam[0,6] = np.trace(rhat @ rhat @ shat @ rhat @ shat @ shat)
+    #lam = np.empty([1,7])
+    #lam[0,0] = np.trace(shat)
+    #lam[0,1] = np.trace(shat @ shat)
+    #lam[0,2] = np.trace(shat @ shat @ shat)
+    #lam[0,3] = np.trace(rhat @ rhat)
+    #lam[0,4] = np.trace(rhat @ rhat @ shat)
+    #lam[0,5] = np.trace(rhat @ rhat @ shat @ shat)
+    #lam[0,6] = np.trace(rhat @ rhat @ shat @ rhat @ shat @ shat)
+
+    lam = np.empty([1,3])
+    lam[0,0] = np.trace(shat @ shat)
+    lam[0,1] = np.trace(rhat @ rhat)
+    lam[0,2] = np.trace(rhat @ rhat @ shat @ shat)
 
     return lam 
 
 
 def compute_rate_tensors(gradu, Ny):
     # integrity basis tensors and scalar invariants
-    sij = gradu + np.transpose(gradu, (0,2,1))
-    oij = gradu - np.transpose(gradu, (0,2,1))
+    sij = 1/2 * ( gradu + np.transpose(gradu, (0,2,1)) )
+    oij = 1/2 * ( gradu - np.transpose(gradu, (0,2,1)) )
 
     return sij, oij
 
@@ -169,7 +174,7 @@ def compute_qoi(shat, rhat, Ny):
     #shat, rhat = normalize_rate_tensors(sij, oij, tke, eps, Ny)
 
     basis = np.empty([Ny, 10, 3, 3])
-    lam = np.empty([Ny,7])
+    lam = np.empty([Ny,3])
     for i in range(Ny):
 
         basis[i,:,:,:] = integrity_basis(shat[i,:,:], rhat[i,:,:])
