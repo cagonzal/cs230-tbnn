@@ -87,17 +87,36 @@ def normalize_rate_tensors(sij, oij, tke, eps, Ny):
     return shat, rhat
 
     
-def compute_gradu(meanData, Ny):
+def compute_gradu(dUdy, Ny):
 
     # mean velocity gradient tensor
     gradu = np.empty([Ny, 3, 3])
     for ii in range(Ny):
         buf = np.zeros([3,3])
-        buf[0,1] = meanData[ii,3]
+        buf[0,1] = dUdy[ii]#meanData[ii,3]
         gradu[ii, :, :] = buf
 
     return gradu
 
+def compute_cell_volumes(y, Ny):
+
+    # outputs volumes in as V/delta^3
+    # convert to plus units by multiplying by Re^3
+
+    dx = 8.*np.pi / 1536
+    dz = 3.*np.pi / 1024
+    cellVols = np.empty([Ny])
+
+    cellVols[0] = 0.
+
+    for ii in range(1,Ny-1):
+        dy = (y[ii+1]-y[ii-1])/2
+        cellVols[ii] = dy * dx*dz
+
+    dy = y[-1]-y[-2]
+    cellVols[-1] = dy * dx*dz
+
+    return cellVols
 
 def compute_tke(flucData, Ny):
 

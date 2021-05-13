@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-from load_data import load_data
+import load_data as ld
 import process_raw_data as pd
 
 filepath_mean = 'data/re550/LM_Channel_0550_mean_prof.dat'
@@ -11,12 +11,16 @@ Ny = 192
 nu = 1 * 10**(-4) # from the data file
 
 # y/delta, y+, U, dU/dy, W, P
-meanData = load_data(filepath_mean, Ny, 6)
+#meanData = ld.load_data(filepath_mean, Ny, 6)
+y, U, dUdy = ld.load_mean_data(filepath_mean, Ny)
 
 # y/delta, y+, u'u', v'v', w'w', u'v', u'w', v'w', k
-flucData = load_data(filepath_fluc, Ny, 9)
+flucData = ld.load_data(filepath_fluc, Ny, 9)
 
-gradu = pd.compute_gradu(meanData, Ny)
+cellVols = pd.compute_cell_volumes(y, Ny)
+print(cellVols)
+
+gradu = pd.compute_gradu(dUdy, Ny)
 aij, bij = pd.compute_bij(flucData, Ny)
 tke = pd.compute_tke(flucData, Ny)
 
