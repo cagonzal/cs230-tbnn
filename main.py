@@ -1,6 +1,7 @@
 import numpy as np
 #import matplotlib.pyplot as plt
 from tbnns.tbnn import TBNN
+import random
 
 import load_data as ld
 import process_raw_data as pd
@@ -39,12 +40,40 @@ nut = pd.compute_nut(aij, sij, Ny)
 
 shat, rhat = pd.normalize_rate_tensors(sij, oij, tke, eps, Ny)
 
+# lam = scalar invariants, tb = tensor basis
 lam, tb = pd.compute_qoi(sij, oij, Ny)
 print("lam has shape " + str(lam.shape))
 print("tb has shape " + str(tb.shape))
 
-# lam = scalar invariants, tb = tensor basis
+random.seed(10)
+shuffler = np.random.permutation(Ny)
 
+lamShuffled = lam[shuffler,:]
+tbShuffled = tb[shuffler,:,:,:]
+bijShuffled = bij[shuffler,:,:]
+graduShuffled = gradu[shuffler,:,:]
+nutShuffled = nut[shuffler]
+tkeShuffled = tke[shuffler]
+
+print('Data is shuffled')
+
+nTrain = int(np.floor(0.8 * Ny))
+lamTrain = lamShuffled[0:nTrain,:]
+tbTrain = tbShuffled[0:nTrain,:,:,:]
+bijTrain = bijShuffled[0:nTrain,:,:]
+
+nDev = int(np.floor(0.9 * Ny))
+lamDev = lamShuffled[nTrain:nDev,:]
+tbDev = tbShuffled[nTrain:nDev,:,:,:]
+bijDev = bijShuffled[nTrain:nDev,:,:]
+
+lamTest = lamShuffled[nDev:,:]
+tbTest = tbShuffled[nDev:,:,:,:]
+bijTest = bijShuffled[nDev:,:,:]
+
+graduTest = graduShuffled[nDev:,:,:]
+nutTest = np.squeeze(nutShuffled[nDev:,:])
+tkeTest = tkeShuffled[nDev:]   
 
 # Copied from TBNN example
 
@@ -128,15 +157,21 @@ def applyNetwork(x_test, tb_test, b_test, gradu_test, nut_test, tke_test):
     # train the TBNN on r=2 data (with r=1.5 as the dev set)
 print("")
 print("Training TBNN on baseline Re_tau=550 channel data...")
-trainNetwork(lam, tb, bij, lam, tb, bij)
+trainNetwork(lamTrain, tbTrain, bijTrain, lamDev, tbDev, bijDev)
     #trainNetwork(x_r2, tb_r2, b_r2, x_r1p5, tb_r1p5, b_r1p5)    
     #trainNetwork(x_r2, tb_r2, b_r2, x_r1p5, tb_r1p5, b_r1p5, vol_r2, vol_r1)
     # the last two arguments are optional; they consist of a weight that is applied
     # to the loss function. Uncomment to apply the computational cell volume as a weight
     
     # Apply the trained network on the r=1 data
+
+#TEST
+print("gradu has shape " + str(graduTest.shape))
+print("eddy_visc has shape " + str(nutTest.shape))
+print("tke has shape " + str(tkeTest.shape)) 
+
 print("")
 print("Applying trained TBNN on baseline jet r=1 data...")
     #applyNetwork(x_r1, tb_r1, b_r1, gradu_r1, nut_r1, tke_r1)
-#applyNetwork(lam, tb, bij, lam, tb, bij)
+applyNetwork(lamTest, tbTest, bijTest, graduTest, nutTest, tkeTest)
 
