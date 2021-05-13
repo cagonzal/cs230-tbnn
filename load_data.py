@@ -113,8 +113,8 @@ def compute_qoi(meanData, flucData, nu):
 
 
 
-filepath_mean = '../re550/LM_Channel_0550_mean_prof.dat'
-filepath_fluc = '../re550/LM_Channel_0550_vel_fluc_prof.dat'
+filepath_mean = 'data/re550/LM_Channel_0550_mean_prof.dat'
+filepath_fluc = 'data/re550/LM_Channel_0550_vel_fluc_prof.dat'
 
 ny = 192
 nu = 1 * 10**(-4) # from the data file
