@@ -1,7 +1,9 @@
 import numpy as np
 #import matplotlib.pyplot as plt
 from tbnns.tbnn import TBNN
+from tbnns import printInfo
 import random
+import sys
 
 import load_data as ld
 import process_raw_data as pd
@@ -155,9 +157,16 @@ def applyNetwork(x_test, tb_test, b_test, gradu_test, nut_test, tke_test):
     # x_r2, tb_r2, gradu_r2, b_r2, tke_r2, omg_r2, nut_r2, vol_r2) = loadData() 
 
     # train the TBNN on r=2 data (with r=1.5 as the dev set)
+
+    # save terminal output to file
+fout = open('output.txt','w')
+sys.stdout = fout
+printInfo()
+
 print("")
 print("Training TBNN on baseline Re_tau=550 channel data...")
 trainNetwork(lamTrain, tbTrain, bijTrain, lamDev, tbDev, bijDev)
+print("")
     #trainNetwork(x_r2, tb_r2, b_r2, x_r1p5, tb_r1p5, b_r1p5)    
     #trainNetwork(x_r2, tb_r2, b_r2, x_r1p5, tb_r1p5, b_r1p5, vol_r2, vol_r1)
     # the last two arguments are optional; they consist of a weight that is applied
@@ -171,7 +180,8 @@ print("eddy_visc has shape " + str(nutTest.shape))
 print("tke has shape " + str(tkeTest.shape)) 
 
 print("")
-print("Applying trained TBNN on baseline jet r=1 data...")
+print("Applying trained TBNN on baseline Re_tau=550 channel data...")
     #applyNetwork(x_r1, tb_r1, b_r1, gradu_r1, nut_r1, tke_r1)
 applyNetwork(lamTest, tbTest, bijTest, graduTest, nutTest, tkeTest)
+fout.close()
 
