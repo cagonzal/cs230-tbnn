@@ -1,5 +1,6 @@
-./__pycache__
-./checkpoints
+Icon
+__pycache__
+checkpoints
 *.pckl
 *.dat
 *.pyc
