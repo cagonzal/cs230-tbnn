@@ -12,29 +12,39 @@ import process_raw_data as pd
 filepath_mean = 'data/re550/LM_Channel_0550_mean_prof.dat'
 filepath_fluc = 'data/re550/LM_Channel_0550_vel_fluc_prof.dat'
 
-Ny = 192
+Ny_raw = 192
 nu = 1 * 10**(-4) # from the data file
 
 # y/delta, y+, U, dU/dy, W, P
 #meanData = ld.load_data(filepath_mean, Ny, 6)
-y, U, dUdy = ld.load_mean_data(filepath_mean, Ny)
-print("y has shape " + str(y.shape))
-print("U has shape " + str(U.shape))
+y_raw, U_raw, dUdy_raw = ld.load_mean_data(filepath_mean, Ny_raw)
+print("y_raw has shape " + str(y_raw.shape))
+print("U_raw has shape " + str(U_raw.shape))
+
 
 # y/delta, y+, u'u', v'v', w'w', u'v', u'w', v'w', k
-flucData = ld.load_data(filepath_fluc, Ny, 9)
+uus_raw, tke_raw = ld.load_fluc_data(filepath_fluc, Ny_raw)
+
+# Temp fix for raw
+Ny = Ny_raw
+dUdy = dUdy_raw
+uus = uus_raw
 
 # Process data
-vol = pd.compute_cell_volumes(y, Ny)
+#vol = pd.compute_cell_volumes(y, Ny)
 
 gradu = pd.compute_gradu(dUdy, Ny)
 print("gradu has shape " + str(gradu.shape))
-aij, bij = pd.compute_bij(flucData, Ny)
+
+#tke = pd.compute_tke(flucData, Ny)
+tke_raw = np.squeeze(tke_raw)
+tke = tke_raw
+print("tke has shape " + str(tke.shape))
+
+
+aij, bij = pd.compute_bij(uus, tke, Ny)
 print("aij has shape " + str(aij.shape))
 print("bij has shape " + str(bij.shape))
-tke = pd.compute_tke(flucData, Ny)
-tke = np.squeeze(tke)
-print("tke has shape " + str(tke.shape))
 
 sij, oij = pd.compute_rate_tensors(gradu, Ny)
 eps = pd.compute_dissipation(sij, nu, Ny)

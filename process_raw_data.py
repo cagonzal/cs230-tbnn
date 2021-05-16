@@ -142,20 +142,19 @@ def compute_nut(aij, sij, Ny):
 
 
 
-def compute_bij(flucData, Ny):
+def compute_bij(uus, tke, Ny):
     # normalized reynolds stress anisotropy tensor
     aij = np.empty([Ny, 3, 3])
     bij = np.empty([Ny, 3, 3])
     
     for ii in range(Ny):
-        buf = np.array([[flucData[ii,2], flucData[ii,5], flucData[ii,6]],\
-                        [flucData[ii,5], flucData[ii,3], flucData[ii,7]],\
-                        [flucData[ii,6], flucData[ii,7], flucData[ii,4]] ])
-        tke_temp = flucData[ii,8]
-        k_dij = np.ones([3,3]) * tke_temp
+        buf = np.array([[uus[ii,0], uus[ii,3], uus[ii,4]],\
+                        [uus[ii,3], uus[ii,1], uus[ii,5]],\
+                        [uus[ii,4], uus[ii,5], uus[ii,2]] ])
+        k_dij = np.ones([3,3]) * tke[ii]
 
         aij[ii,:,:] = buf - 2/3 * k_dij
-        bij[ii,:,:] = aij[ii,:,:] / (2 * tke_temp)
+        bij[ii,:,:] = aij[ii,:,:] / (2 * tke[ii])
 
     return aij, bij
 

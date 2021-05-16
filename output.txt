@@ -5,7 +5,7 @@ Installed version: 0.5.0
 
 Training TBNN on baseline Re_tau=550 channel data...
 Training...
----------Epoch 0 took 0.21s
+---------Epoch 0 took 0.23s
 ---------Epoch 1 took 0.01s
 ---------Epoch 2 took 0.01s
 ---------Epoch 3 took 0.01s
@@ -29,18 +29,18 @@ Training...
 ---------Epoch 21 took 0.01s
 ---------Epoch 22 took 0.01s
 ---------Epoch 23 took 0.01s
-Step 100. Evaluating losses: Exp Train: 0.064 | Dev: 0.053 (42.105% non-realizable matrices)
-Dev breakdown -> predict: 0.053 | regularize: 113.632 |
-(*) New best prediction loss: 0.0534734
+Step 100. Evaluating losses: Exp Train: 0.073 | Dev: 0.073 (15.789% non-realizable matrices)
+Dev breakdown -> predict: 0.073 | regularize: 108.517 |
+(*) New best prediction loss: 0.0728561
 
----------Epoch 24 took 0.23s
+---------Epoch 24 took 0.24s
 ---------Epoch 25 took 0.01s
 ---------Epoch 26 took 0.01s
 ---------Epoch 27 took 0.01s
 ---------Epoch 28 took 0.01s
 ---------Epoch 29 took 0.01s
----------Epoch 30 took 0.00s
----------Epoch 31 took 0.00s
+---------Epoch 30 took 0.01s
+---------Epoch 31 took 0.01s
 ---------Epoch 32 took 0.01s
 ---------Epoch 33 took 0.01s
 ---------Epoch 34 took 0.01s
@@ -52,27 +52,27 @@ Dev breakdown -> predict: 0.053 | regularize: 113.632 |
 ---------Epoch 40 took 0.01s
 ---------Epoch 41 took 0.01s
 ---------Epoch 42 took 0.01s
----------Epoch 43 took 0.00s
+---------Epoch 43 took 0.01s
 ---------Epoch 44 took 0.01s
 ---------Epoch 45 took 0.01s
----------Epoch 46 took 0.00s
----------Epoch 47 took 0.00s
+---------Epoch 46 took 0.01s
+---------Epoch 47 took 0.01s
 ---------Epoch 48 took 0.01s
-Step 200. Evaluating losses: Exp Train: 0.059 | Dev: 0.043 (42.105% non-realizable matrices)
-Dev breakdown -> predict: 0.043 | regularize: 107.049 |
-(*) New best prediction loss: 0.0432035
+Step 200. Evaluating losses: Exp Train: 0.058 | Dev: 0.062 (21.053% non-realizable matrices)
+Dev breakdown -> predict: 0.062 | regularize: 103.117 |
+(*) New best prediction loss: 0.0616283
 
 ---------Epoch 49 took 0.06s
 ---------Epoch 50 took 0.01s
 ---------Epoch 51 took 0.01s
 ---------Epoch 52 took 0.01s
----------Epoch 53 took 0.00s
+---------Epoch 53 took 0.01s
 ---------Epoch 54 took 0.01s
 ---------Epoch 55 took 0.01s
 ---------Epoch 56 took 0.01s
----------Epoch 57 took 0.00s
+---------Epoch 57 took 0.01s
 ---------Epoch 58 took 0.01s
----------Epoch 59 took 0.00s
+---------Epoch 59 took 0.01s
 ---------Epoch 60 took 0.01s
 ---------Epoch 61 took 0.01s
 ---------Epoch 62 took 0.01s
@@ -82,14 +82,14 @@ Dev breakdown -> predict: 0.043 | regularize: 107.049 |
 ---------Epoch 66 took 0.01s
 ---------Epoch 67 took 0.01s
 ---------Epoch 68 took 0.01s
----------Epoch 69 took 0.00s
----------Epoch 70 took 0.00s
----------Epoch 71 took 0.00s
----------Epoch 72 took 0.00s
+---------Epoch 69 took 0.01s
+---------Epoch 70 took 0.01s
+---------Epoch 71 took 0.01s
+---------Epoch 72 took 0.01s
 ---------Epoch 73 took 0.01s
-Step 300. Evaluating losses: Exp Train: 0.057 | Dev: 0.041 (47.368% non-realizable matrices)
-Dev breakdown -> predict: 0.041 | regularize: 104.174 |
-(*) New best prediction loss: 0.0409295
+Step 300. Evaluating losses: Exp Train: 0.058 | Dev: 0.058 (21.053% non-realizable matrices)
+Dev breakdown -> predict: 0.058 | regularize: 98.256 |
+(*) New best prediction loss: 0.0577651
 
 ---------Epoch 74 took 0.06s
 ---------Epoch 75 took 0.01s
@@ -103,22 +103,22 @@ Dev breakdown -> predict: 0.041 | regularize: 104.174 |
 ---------Epoch 83 took 0.01s
 ---------Epoch 84 took 0.01s
 ---------Epoch 85 took 0.01s
----------Epoch 86 took 0.00s
----------Epoch 87 took 0.00s
----------Epoch 88 took 0.00s
+---------Epoch 86 took 0.01s
+---------Epoch 87 took 0.01s
+---------Epoch 88 took 0.01s
 ---------Epoch 89 took 0.01s
----------Epoch 90 took 0.00s
----------Epoch 91 took 0.00s
+---------Epoch 90 took 0.01s
+---------Epoch 91 took 0.01s
 ---------Epoch 92 took 0.01s
 ---------Epoch 93 took 0.01s
 ---------Epoch 94 took 0.01s
 ---------Epoch 95 took 0.01s
 ---------Epoch 96 took 0.01s
----------Epoch 97 took 0.00s
----------Epoch 98 took 0.00s
-Step 400. Evaluating losses: Exp Train: 0.052 | Dev: 0.038 (47.368% non-realizable matrices)
-Dev breakdown -> predict: 0.038 | regularize: 103.208 |
-(*) New best prediction loss: 0.0381148
+---------Epoch 97 took 0.01s
+---------Epoch 98 took 0.01s
+Step 400. Evaluating losses: Exp Train: 0.056 | Dev: 0.056 (21.053% non-realizable matrices)
+Dev breakdown -> predict: 0.056 | regularize: 95.260 |
+(*) New best prediction loss: 0.0564144
 
 ---------Epoch 99 took 0.06s
 ---------Epoch 100 took 0.01s
@@ -134,20 +134,20 @@ Dev breakdown -> predict: 0.038 | regularize: 103.208 |
 ---------Epoch 110 took 0.01s
 ---------Epoch 111 took 0.01s
 ---------Epoch 112 took 0.01s
----------Epoch 113 took 0.00s
----------Epoch 114 took 0.00s
----------Epoch 115 took 0.00s
+---------Epoch 113 took 0.01s
+---------Epoch 114 took 0.01s
+---------Epoch 115 took 0.01s
 ---------Epoch 116 took 0.01s
 ---------Epoch 117 took 0.01s
 ---------Epoch 118 took 0.01s
 ---------Epoch 119 took 0.01s
----------Epoch 120 took 0.00s
----------Epoch 121 took 0.00s
----------Epoch 122 took 0.00s
----------Epoch 123 took 0.00s
-Step 500. Evaluating losses: Exp Train: 0.049 | Dev: 0.037 (52.632% non-realizable matrices)
-Dev breakdown -> predict: 0.037 | regularize: 104.725 |
-(*) New best prediction loss: 0.0366957
+---------Epoch 120 took 0.01s
+---------Epoch 121 took 0.01s
+---------Epoch 122 took 0.01s
+---------Epoch 123 took 0.01s
+Step 500. Evaluating losses: Exp Train: 0.055 | Dev: 0.056 (21.053% non-realizable matrices)
+Dev breakdown -> predict: 0.056 | regularize: 94.658 |
+(*) New best prediction loss: 0.0555545
 
 ---------Epoch 124 took 0.06s
 ---------Epoch 125 took 0.01s
@@ -165,20 +165,19 @@ Dev breakdown -> predict: 0.037 | regularize: 104.725 |
 ---------Epoch 137 took 0.01s
 ---------Epoch 138 took 0.01s
 ---------Epoch 139 took 0.01s
----------Epoch 140 took 0.00s
----------Epoch 141 took 0.00s
+---------Epoch 140 took 0.01s
+---------Epoch 141 took 0.01s
 ---------Epoch 142 took 0.01s
----------Epoch 143 took 0.00s
----------Epoch 144 took 0.00s
----------Epoch 145 took 0.00s
+---------Epoch 143 took 0.01s
+---------Epoch 144 took 0.01s
+---------Epoch 145 took 0.01s
 ---------Epoch 146 took 0.01s
----------Epoch 147 took 0.00s
+---------Epoch 147 took 0.01s
 ---------Epoch 148 took 0.01s
-Step 600. Evaluating losses: Exp Train: 0.048 | Dev: 0.034 (57.895% non-realizable matrices)
-Dev breakdown -> predict: 0.034 | regularize: 109.083 |
-(*) New best prediction loss: 0.0337039
+Step 600. Evaluating losses: Exp Train: 0.052 | Dev: 0.057 (21.053% non-realizable matrices)
+Dev breakdown -> predict: 0.057 | regularize: 95.879 |
 
----------Epoch 149 took 0.06s
+---------Epoch 149 took 0.01s
 ---------Epoch 150 took 0.01s
 ---------Epoch 151 took 0.01s
 ---------Epoch 152 took 0.01s
@@ -203,9 +202,9 @@ Dev breakdown -> predict: 0.034 | regularize: 109.083 |
 ---------Epoch 171 took 0.01s
 ---------Epoch 172 took 0.01s
 ---------Epoch 173 took 0.01s
-Step 700. Evaluating losses: Exp Train: 0.043 | Dev: 0.033 (57.895% non-realizable matrices)
-Dev breakdown -> predict: 0.033 | regularize: 111.652 |
-(*) New best prediction loss: 0.0325785
+Step 700. Evaluating losses: Exp Train: 0.051 | Dev: 0.054 (26.316% non-realizable matrices)
+Dev breakdown -> predict: 0.054 | regularize: 98.816 |
+(*) New best prediction loss: 0.0540105
 
 ---------Epoch 174 took 0.06s
 ---------Epoch 175 took 0.01s
@@ -213,60 +212,61 @@ Dev breakdown -> predict: 0.033 | regularize: 111.652 |
 ---------Epoch 177 took 0.01s
 ---------Epoch 178 took 0.01s
 ---------Epoch 179 took 0.01s
----------Epoch 180 took 0.00s
----------Epoch 181 took 0.00s
----------Epoch 182 took 0.00s
----------Epoch 183 took 0.00s
----------Epoch 184 took 0.00s
----------Epoch 185 took 0.00s
----------Epoch 186 took 0.00s
----------Epoch 187 took 0.00s
----------Epoch 188 took 0.00s
----------Epoch 189 took 0.00s
+---------Epoch 180 took 0.01s
+---------Epoch 181 took 0.01s
+---------Epoch 182 took 0.01s
+---------Epoch 183 took 0.01s
+---------Epoch 184 took 0.01s
+---------Epoch 185 took 0.01s
+---------Epoch 186 took 0.01s
+---------Epoch 187 took 0.01s
+---------Epoch 188 took 0.01s
+---------Epoch 189 took 0.01s
 ---------Epoch 190 took 0.01s
 ---------Epoch 191 took 0.01s
 ---------Epoch 192 took 0.01s
 ---------Epoch 193 took 0.01s
 ---------Epoch 194 took 0.01s
----------Epoch 195 took 0.00s
+---------Epoch 195 took 0.01s
 ---------Epoch 196 took 0.01s
----------Epoch 197 took 0.00s
----------Epoch 198 took 0.00s
-Step 800. Evaluating losses: Exp Train: 0.043 | Dev: 0.032 (57.895% non-realizable matrices)
-Dev breakdown -> predict: 0.032 | regularize: 115.659 |
-(*) New best prediction loss: 0.0324174
+---------Epoch 197 took 0.01s
+---------Epoch 198 took 0.01s
+Step 800. Evaluating losses: Exp Train: 0.048 | Dev: 0.050 (26.316% non-realizable matrices)
+Dev breakdown -> predict: 0.050 | regularize: 103.080 |
+(*) New best prediction loss: 0.0504839
 
 ---------Epoch 199 took 0.06s
 ---------Epoch 200 took 0.01s
 ---------Epoch 201 took 0.01s
 ---------Epoch 202 took 0.01s
 ---------Epoch 203 took 0.01s
----------Epoch 204 took 0.00s
----------Epoch 205 took 0.00s
+---------Epoch 204 took 0.01s
+---------Epoch 205 took 0.01s
 ---------Epoch 206 took 0.01s
----------Epoch 207 took 0.00s
----------Epoch 208 took 0.00s
----------Epoch 209 took 0.00s
+---------Epoch 207 took 0.01s
+---------Epoch 208 took 0.01s
+---------Epoch 209 took 0.01s
 ---------Epoch 210 took 0.01s
----------Epoch 211 took 0.00s
----------Epoch 212 took 0.00s
----------Epoch 213 took 0.00s
----------Epoch 214 took 0.00s
+---------Epoch 211 took 0.01s
+---------Epoch 212 took 0.01s
+---------Epoch 213 took 0.01s
+---------Epoch 214 took 0.01s
 ---------Epoch 215 took 0.01s
----------Epoch 216 took 0.00s
----------Epoch 217 took 0.00s
----------Epoch 218 took 0.00s
----------Epoch 219 took 0.00s
----------Epoch 220 took 0.00s
+---------Epoch 216 took 0.01s
+---------Epoch 217 took 0.01s
+---------Epoch 218 took 0.01s
+---------Epoch 219 took 0.01s
+---------Epoch 220 took 0.01s
 ---------Epoch 221 took 0.01s
 ---------Epoch 222 took 0.01s
 ---------Epoch 223 took 0.01s
-Step 900. Evaluating losses: Exp Train: 0.050 | Dev: 0.036 (57.895% non-realizable matrices)
-Dev breakdown -> predict: 0.036 | regularize: 118.735 |
+Step 900. Evaluating losses: Exp Train: 0.047 | Dev: 0.048 (31.579% non-realizable matrices)
+Dev breakdown -> predict: 0.048 | regularize: 107.583 |
+(*) New best prediction loss: 0.0484541
 
----------Epoch 224 took 0.01s
----------Epoch 225 took 0.00s
----------Epoch 226 took 0.01s
+---------Epoch 224 took 0.06s
+---------Epoch 225 took 0.01s
+---------Epoch 226 took 0.00s
 ---------Epoch 227 took 0.01s
 ---------Epoch 228 took 0.01s
 ---------Epoch 229 took 0.01s
@@ -277,22 +277,23 @@ Dev breakdown -> predict: 0.036 | regularize: 118.735 |
 ---------Epoch 234 took 0.01s
 ---------Epoch 235 took 0.01s
 ---------Epoch 236 took 0.01s
----------Epoch 237 took 0.00s
----------Epoch 238 took 0.00s
+---------Epoch 237 took 0.01s
+---------Epoch 238 took 0.01s
 ---------Epoch 239 took 0.01s
 ---------Epoch 240 took 0.01s
 ---------Epoch 241 took 0.01s
----------Epoch 242 took 0.00s
----------Epoch 243 took 0.00s
----------Epoch 244 took 0.00s
+---------Epoch 242 took 0.01s
+---------Epoch 243 took 0.01s
+---------Epoch 244 took 0.01s
 ---------Epoch 245 took 0.01s
 ---------Epoch 246 took 0.01s
 ---------Epoch 247 took 0.01s
 ---------Epoch 248 took 0.01s
-Step 1000. Evaluating losses: Exp Train: 0.046 | Dev: 0.034 (57.895% non-realizable matrices)
-Dev breakdown -> predict: 0.034 | regularize: 122.333 |
+Step 1000. Evaluating losses: Exp Train: 0.042 | Dev: 0.046 (26.316% non-realizable matrices)
+Dev breakdown -> predict: 0.046 | regularize: 112.910 |
+(*) New best prediction loss: 0.0464436
 
----------Epoch 249 took 0.01s
+---------Epoch 249 took 0.06s
 ---------Epoch 250 took 0.01s
 ---------Epoch 251 took 0.01s
 ---------Epoch 252 took 0.01s
@@ -302,27 +303,28 @@ Dev breakdown -> predict: 0.034 | regularize: 122.333 |
 ---------Epoch 256 took 0.01s
 ---------Epoch 257 took 0.01s
 ---------Epoch 258 took 0.01s
----------Epoch 259 took 0.00s
+---------Epoch 259 took 0.01s
 ---------Epoch 260 took 0.01s
 ---------Epoch 261 took 0.01s
 ---------Epoch 262 took 0.01s
----------Epoch 263 took 0.00s
----------Epoch 264 took 0.00s
----------Epoch 265 took 0.00s
+---------Epoch 263 took 0.01s
+---------Epoch 264 took 0.01s
+---------Epoch 265 took 0.01s
 ---------Epoch 266 took 0.01s
----------Epoch 267 took 0.00s
----------Epoch 268 took 0.00s
----------Epoch 269 took 0.00s
+---------Epoch 267 took 0.01s
+---------Epoch 268 took 0.01s
+---------Epoch 269 took 0.01s
 ---------Epoch 270 took 0.01s
----------Epoch 271 took 0.00s
----------Epoch 272 took 0.00s
----------Epoch 273 took 0.00s
-Step 1100. Evaluating losses: Exp Train: 0.047 | Dev: 0.041 (42.105% non-realizable matrices)
-Dev breakdown -> predict: 0.041 | regularize: 126.591 |
+---------Epoch 271 took 0.01s
+---------Epoch 272 took 0.01s
+---------Epoch 273 took 0.01s
+Step 1100. Evaluating losses: Exp Train: 0.041 | Dev: 0.044 (31.579% non-realizable matrices)
+Dev breakdown -> predict: 0.044 | regularize: 117.364 |
+(*) New best prediction loss: 0.0435429
 
----------Epoch 274 took 0.01s
+---------Epoch 274 took 0.06s
 ---------Epoch 275 took 0.01s
----------Epoch 276 took 0.01s
+---------Epoch 276 took 0.00s
 ---------Epoch 277 took 0.01s
 ---------Epoch 278 took 0.01s
 ---------Epoch 279 took 0.01s
@@ -341,21 +343,21 @@ Dev breakdown -> predict: 0.041 | regularize: 126.591 |
 ---------Epoch 292 took 0.01s
 ---------Epoch 293 took 0.01s
 ---------Epoch 294 took 0.01s
----------Epoch 295 took 0.00s
+---------Epoch 295 took 0.01s
 ---------Epoch 296 took 0.01s
 ---------Epoch 297 took 0.01s
----------Epoch 298 took 0.00s
-Step 1200. Evaluating losses: Exp Train: 0.041 | Dev: 0.031 (57.895% non-realizable matrices)
-Dev breakdown -> predict: 0.031 | regularize: 130.053 |
-(*) New best prediction loss: 0.031182
+---------Epoch 298 took 0.01s
+Step 1200. Evaluating losses: Exp Train: 0.039 | Dev: 0.040 (47.368% non-realizable matrices)
+Dev breakdown -> predict: 0.040 | regularize: 122.984 |
+(*) New best prediction loss: 0.0400203
 
----------Epoch 299 took 0.07s
+---------Epoch 299 took 0.06s
 ---------Epoch 300 took 0.01s
 ---------Epoch 301 took 0.01s
 ---------Epoch 302 took 0.01s
 ---------Epoch 303 took 0.01s
 ---------Epoch 304 took 0.01s
----------Epoch 305 took 0.00s
+---------Epoch 305 took 0.01s
 ---------Epoch 306 took 0.01s
 ---------Epoch 307 took 0.01s
 ---------Epoch 308 took 0.01s
@@ -374,13 +376,13 @@ Dev breakdown -> predict: 0.031 | regularize: 130.053 |
 ---------Epoch 321 took 0.01s
 ---------Epoch 322 took 0.01s
 ---------Epoch 323 took 0.01s
-Step 1300. Evaluating losses: Exp Train: 0.041 | Dev: 0.030 (63.158% non-realizable matrices)
-Dev breakdown -> predict: 0.030 | regularize: 134.449 |
-(*) New best prediction loss: 0.0302248
+Step 1300. Evaluating losses: Exp Train: 0.043 | Dev: 0.040 (47.368% non-realizable matrices)
+Dev breakdown -> predict: 0.040 | regularize: 128.814 |
+(*) New best prediction loss: 0.0396806
 
----------Epoch 324 took 0.07s
+---------Epoch 324 took 0.06s
 ---------Epoch 325 took 0.01s
----------Epoch 326 took 0.00s
+---------Epoch 326 took 0.01s
 ---------Epoch 327 took 0.01s
 ---------Epoch 328 took 0.01s
 ---------Epoch 329 took 0.01s
@@ -388,61 +390,61 @@ Dev breakdown -> predict: 0.030 | regularize: 134.449 |
 ---------Epoch 331 took 0.01s
 ---------Epoch 332 took 0.01s
 ---------Epoch 333 took 0.01s
----------Epoch 334 took 0.00s
----------Epoch 335 took 0.00s
----------Epoch 336 took 0.00s
+---------Epoch 334 took 0.01s
+---------Epoch 335 took 0.01s
+---------Epoch 336 took 0.01s
 ---------Epoch 337 took 0.01s
 ---------Epoch 338 took 0.01s
 ---------Epoch 339 took 0.01s
----------Epoch 340 took 0.00s
+---------Epoch 340 took 0.01s
 ---------Epoch 341 took 0.01s
----------Epoch 342 took 0.00s
----------Epoch 343 took 0.00s
----------Epoch 344 took 0.00s
----------Epoch 345 took 0.00s
----------Epoch 346 took 0.00s
----------Epoch 347 took 0.00s
----------Epoch 348 took 0.00s
-Step 1400. Evaluating losses: Exp Train: 0.038 | Dev: 0.030 (57.895% non-realizable matrices)
-Dev breakdown -> predict: 0.030 | regularize: 138.173 |
-(*) New best prediction loss: 0.029571
+---------Epoch 342 took 0.01s
+---------Epoch 343 took 0.01s
+---------Epoch 344 took 0.01s
+---------Epoch 345 took 0.01s
+---------Epoch 346 took 0.01s
+---------Epoch 347 took 0.01s
+---------Epoch 348 took 0.01s
+Step 1400. Evaluating losses: Exp Train: 0.039 | Dev: 0.039 (47.368% non-realizable matrices)
+Dev breakdown -> predict: 0.039 | regularize: 131.160 |
+(*) New best prediction loss: 0.0385205
 
----------Epoch 349 took 0.05s
+---------Epoch 349 took 0.06s
 ---------Epoch 350 took 0.01s
 ---------Epoch 351 took 0.01s
 ---------Epoch 352 took 0.01s
 ---------Epoch 353 took 0.01s
 ---------Epoch 354 took 0.01s
----------Epoch 355 took 0.00s
----------Epoch 356 took 0.00s
----------Epoch 357 took 0.00s
+---------Epoch 355 took 0.01s
+---------Epoch 356 took 0.01s
+---------Epoch 357 took 0.01s
 ---------Epoch 358 took 0.01s
 ---------Epoch 359 took 0.01s
 ---------Epoch 360 took 0.01s
 ---------Epoch 361 took 0.01s
----------Epoch 362 took 0.00s
----------Epoch 363 took 0.00s
----------Epoch 364 took 0.00s
+---------Epoch 362 took 0.01s
+---------Epoch 363 took 0.01s
+---------Epoch 364 took 0.01s
 ---------Epoch 365 took 0.01s
 ---------Epoch 366 took 0.01s
 ---------Epoch 367 took 0.01s
 ---------Epoch 368 took 0.01s
----------Epoch 369 took 0.00s
+---------Epoch 369 took 0.01s
 ---------Epoch 370 took 0.01s
----------Epoch 371 took 0.00s
----------Epoch 372 took 0.00s
----------Epoch 373 took 0.00s
-Step 1500. Evaluating losses: Exp Train: 0.036 | Dev: 0.029 (63.158% non-realizable matrices)
-Dev breakdown -> predict: 0.029 | regularize: 143.489 |
-(*) New best prediction loss: 0.0287244
+---------Epoch 371 took 0.01s
+---------Epoch 372 took 0.01s
+---------Epoch 373 took 0.01s
+Step 1500. Evaluating losses: Exp Train: 0.036 | Dev: 0.037 (47.368% non-realizable matrices)
+Dev breakdown -> predict: 0.037 | regularize: 133.767 |
+(*) New best prediction loss: 0.037262
 
----------Epoch 374 took 0.06s
+---------Epoch 374 took 0.07s
 ---------Epoch 375 took 0.01s
 ---------Epoch 376 took 0.01s
 ---------Epoch 377 took 0.01s
 ---------Epoch 378 took 0.01s
 ---------Epoch 379 took 0.01s
----------Epoch 380 took 0.00s
+---------Epoch 380 took 0.01s
 ---------Epoch 381 took 0.01s
 ---------Epoch 382 took 0.01s
 ---------Epoch 383 took 0.01s
@@ -458,19 +460,20 @@ Dev breakdown -> predict: 0.029 | regularize: 143.489 |
 ---------Epoch 393 took 0.01s
 ---------Epoch 394 took 0.01s
 ---------Epoch 395 took 0.01s
----------Epoch 396 took 0.00s
+---------Epoch 396 took 0.01s
 ---------Epoch 397 took 0.01s
----------Epoch 398 took 0.00s
-Step 1600. Evaluating losses: Exp Train: 0.036 | Dev: 0.030 (57.895% non-realizable matrices)
-Dev breakdown -> predict: 0.030 | regularize: 146.004 |
+---------Epoch 398 took 0.01s
+Step 1600. Evaluating losses: Exp Train: 0.035 | Dev: 0.036 (47.368% non-realizable matrices)
+Dev breakdown -> predict: 0.036 | regularize: 137.065 |
+(*) New best prediction loss: 0.0360461
 
----------Epoch 399 took 0.01s
----------Epoch 400 took 0.00s
----------Epoch 401 took 0.00s
----------Epoch 402 took 0.00s
+---------Epoch 399 took 0.06s
+---------Epoch 400 took 0.01s
+---------Epoch 401 took 0.01s
+---------Epoch 402 took 0.01s
 ---------Epoch 403 took 0.01s
----------Epoch 404 took 0.00s
----------Epoch 405 took 0.00s
+---------Epoch 404 took 0.01s
+---------Epoch 405 took 0.01s
 ---------Epoch 406 took 0.01s
 ---------Epoch 407 took 0.01s
 ---------Epoch 408 took 0.01s
@@ -482,18 +485,17 @@ Dev breakdown -> predict: 0.030 | regularize: 146.004 |
 ---------Epoch 414 took 0.01s
 ---------Epoch 415 took 0.01s
 ---------Epoch 416 took 0.01s
----------Epoch 417 took 0.00s
----------Epoch 418 took 0.00s
+---------Epoch 417 took 0.01s
+---------Epoch 418 took 0.01s
 ---------Epoch 419 took 0.01s
 ---------Epoch 420 took 0.01s
----------Epoch 421 took 0.00s
----------Epoch 422 took 0.00s
+---------Epoch 421 took 0.01s
+---------Epoch 422 took 0.01s
 ---------Epoch 423 took 0.01s
-Step 1700. Evaluating losses: Exp Train: 0.037 | Dev: 0.028 (57.895% non-realizable matrices)
-Dev breakdown -> predict: 0.028 | regularize: 146.739 |
-(*) New best prediction loss: 0.0282466
+Step 1700. Evaluating losses: Exp Train: 0.035 | Dev: 0.040 (31.579% non-realizable matrices)
+Dev breakdown -> predict: 0.040 | regularize: 140.713 |
 
----------Epoch 424 took 0.06s
+---------Epoch 424 took 0.01s
 ---------Epoch 425 took 0.01s
 ---------Epoch 426 took 0.01s
 ---------Epoch 427 took 0.01s
@@ -505,7 +507,7 @@ Dev breakdown -> predict: 0.028 | regularize: 146.739 |
 ---------Epoch 433 took 0.01s
 ---------Epoch 434 took 0.01s
 ---------Epoch 435 took 0.01s
----------Epoch 436 took 0.00s
+---------Epoch 436 took 0.01s
 ---------Epoch 437 took 0.01s
 ---------Epoch 438 took 0.01s
 ---------Epoch 439 took 0.01s
@@ -514,18 +516,18 @@ Dev breakdown -> predict: 0.028 | regularize: 146.739 |
 ---------Epoch 442 took 0.01s
 ---------Epoch 443 took 0.01s
 ---------Epoch 444 took 0.01s
----------Epoch 445 took 0.00s
----------Epoch 446 took 0.00s
----------Epoch 447 took 0.00s
----------Epoch 448 took 0.00s
-Step 1800. Evaluating losses: Exp Train: 0.037 | Dev: 0.029 (68.421% non-realizable matrices)
-Dev breakdown -> predict: 0.029 | regularize: 149.797 |
+---------Epoch 445 took 0.01s
+---------Epoch 446 took 0.01s
+---------Epoch 447 took 0.01s
+---------Epoch 448 took 0.01s
+Step 1800. Evaluating losses: Exp Train: 0.038 | Dev: 0.036 (57.895% non-realizable matrices)
+Dev breakdown -> predict: 0.036 | regularize: 141.824 |
 
 ---------Epoch 449 took 0.01s
----------Epoch 450 took 0.00s
----------Epoch 451 took 0.00s
+---------Epoch 450 took 0.01s
+---------Epoch 451 took 0.01s
 ---------Epoch 452 took 0.01s
----------Epoch 453 took 0.00s
+---------Epoch 453 took 0.01s
 ---------Epoch 454 took 0.01s
 ---------Epoch 455 took 0.01s
 ---------Epoch 456 took 0.01s
@@ -546,95 +548,96 @@ Dev breakdown -> predict: 0.029 | regularize: 149.797 |
 ---------Epoch 471 took 0.01s
 ---------Epoch 472 took 0.01s
 ---------Epoch 473 took 0.01s
-Step 1900. Evaluating losses: Exp Train: 0.033 | Dev: 0.033 (52.632% non-realizable matrices)
-Dev breakdown -> predict: 0.033 | regularize: 152.964 |
+Step 1900. Evaluating losses: Exp Train: 0.034 | Dev: 0.035 (57.895% non-realizable matrices)
+Dev breakdown -> predict: 0.035 | regularize: 143.599 |
+(*) New best prediction loss: 0.0353293
 
----------Epoch 474 took 0.01s
----------Epoch 475 took 0.00s
----------Epoch 476 took 0.00s
----------Epoch 477 took 0.00s
----------Epoch 478 took 0.00s
+---------Epoch 474 took 0.06s
+---------Epoch 475 took 0.01s
+---------Epoch 476 took 0.01s
+---------Epoch 477 took 0.01s
+---------Epoch 478 took 0.01s
 ---------Epoch 479 took 0.01s
----------Epoch 480 took 0.00s
----------Epoch 481 took 0.00s
+---------Epoch 480 took 0.01s
+---------Epoch 481 took 0.01s
 ---------Epoch 482 took 0.01s
 ---------Epoch 483 took 0.01s
----------Epoch 484 took 0.00s
----------Epoch 485 took 0.00s
+---------Epoch 484 took 0.01s
+---------Epoch 485 took 0.01s
 ---------Epoch 486 took 0.01s
 ---------Epoch 487 took 0.01s
----------Epoch 488 took 0.00s
----------Epoch 489 took 0.00s
----------Epoch 490 took 0.00s
----------Epoch 491 took 0.00s
----------Epoch 492 took 0.00s
----------Epoch 493 took 0.00s
+---------Epoch 488 took 0.01s
+---------Epoch 489 took 0.01s
+---------Epoch 490 took 0.01s
+---------Epoch 491 took 0.01s
+---------Epoch 492 took 0.01s
+---------Epoch 493 took 0.01s
 ---------Epoch 494 took 0.01s
 ---------Epoch 495 took 0.01s
 ---------Epoch 496 took 0.01s
----------Epoch 497 took 0.00s
----------Epoch 498 took 0.00s
-Step 2000. Evaluating losses: Exp Train: 0.034 | Dev: 0.026 (63.158% non-realizable matrices)
-Dev breakdown -> predict: 0.026 | regularize: 157.284 |
-(*) New best prediction loss: 0.0262266
+---------Epoch 497 took 0.01s
+---------Epoch 498 took 0.01s
+Step 2000. Evaluating losses: Exp Train: 0.043 | Dev: 0.045 (31.579% non-realizable matrices)
+Dev breakdown -> predict: 0.045 | regularize: 144.760 |
 
----------Epoch 499 took 0.06s
+---------Epoch 499 took 0.01s
 ---------Epoch 500 took 0.01s
 ---------Epoch 501 took 0.01s
----------Epoch 502 took 0.01s
----------Epoch 503 took 0.01s
+---------Epoch 502 took 0.00s
+---------Epoch 503 took 0.00s
 ---------Epoch 504 took 0.01s
----------Epoch 505 took 0.01s
----------Epoch 506 took 0.01s
+---------Epoch 505 took 0.00s
+---------Epoch 506 took 0.00s
 ---------Epoch 507 took 0.01s
 ---------Epoch 508 took 0.00s
 ---------Epoch 509 took 0.00s
 ---------Epoch 510 took 0.01s
----------Epoch 511 took 0.01s
----------Epoch 512 took 0.01s
----------Epoch 513 took 0.00s
+---------Epoch 511 took 0.00s
+---------Epoch 512 took 0.00s
+---------Epoch 513 took 0.01s
 ---------Epoch 514 took 0.01s
 ---------Epoch 515 took 0.00s
 ---------Epoch 516 took 0.01s
----------Epoch 517 took 0.01s
+---------Epoch 517 took 0.00s
 ---------Epoch 518 took 0.00s
----------Epoch 519 took 0.00s
+---------Epoch 519 took 0.01s
 ---------Epoch 520 took 0.00s
 ---------Epoch 521 took 0.00s
----------Epoch 522 took 0.00s
+---------Epoch 522 took 0.01s
 ---------Epoch 523 took 0.01s
-Step 2100. Evaluating losses: Exp Train: 0.034 | Dev: 0.028 (68.421% non-realizable matrices)
-Dev breakdown -> predict: 0.028 | regularize: 160.529 |
+Step 2100. Evaluating losses: Exp Train: 0.036 | Dev: 0.037 (47.368% non-realizable matrices)
+Dev breakdown -> predict: 0.037 | regularize: 147.506 |
 
 ---------Epoch 524 took 0.01s
----------Epoch 525 took 0.00s
----------Epoch 526 took 0.00s
+---------Epoch 525 took 0.01s
+---------Epoch 526 took 0.01s
 ---------Epoch 527 took 0.01s
----------Epoch 528 took 0.00s
----------Epoch 529 took 0.00s
----------Epoch 530 took 0.00s
----------Epoch 531 took 0.00s
----------Epoch 532 took 0.00s
+---------Epoch 528 took 0.01s
+---------Epoch 529 took 0.01s
+---------Epoch 530 took 0.01s
+---------Epoch 531 took 0.01s
+---------Epoch 532 took 0.01s
 ---------Epoch 533 took 0.01s
 ---------Epoch 534 took 0.01s
----------Epoch 535 took 0.00s
----------Epoch 536 took 0.00s
----------Epoch 537 took 0.00s
----------Epoch 538 took 0.00s
----------Epoch 539 took 0.00s
----------Epoch 540 took 0.00s
+---------Epoch 535 took 0.01s
+---------Epoch 536 took 0.01s
+---------Epoch 537 took 0.01s
+---------Epoch 538 took 0.01s
+---------Epoch 539 took 0.01s
+---------Epoch 540 took 0.01s
 ---------Epoch 541 took 0.01s
----------Epoch 542 took 0.00s
+---------Epoch 542 took 0.01s
 ---------Epoch 543 took 0.01s
 ---------Epoch 544 took 0.01s
----------Epoch 545 took 0.00s
+---------Epoch 545 took 0.01s
 ---------Epoch 546 took 0.00s
 ---------Epoch 547 took 0.01s
 ---------Epoch 548 took 0.01s
-Step 2200. Evaluating losses: Exp Train: 0.030 | Dev: 0.027 (68.421% non-realizable matrices)
-Dev breakdown -> predict: 0.027 | regularize: 163.455 |
+Step 2200. Evaluating losses: Exp Train: 0.034 | Dev: 0.035 (57.895% non-realizable matrices)
+Dev breakdown -> predict: 0.035 | regularize: 151.278 |
+(*) New best prediction loss: 0.0351233
 
----------Epoch 549 took 0.01s
+---------Epoch 549 took 0.06s
 ---------Epoch 550 took 0.01s
 ---------Epoch 551 took 0.01s
 ---------Epoch 552 took 0.01s
@@ -650,18 +653,18 @@ Dev breakdown -> predict: 0.027 | regularize: 163.455 |
 ---------Epoch 562 took 0.01s
 ---------Epoch 563 took 0.01s
 ---------Epoch 564 took 0.01s
----------Epoch 565 took 0.00s
+---------Epoch 565 took 0.01s
 ---------Epoch 566 took 0.01s
----------Epoch 567 took 0.00s
----------Epoch 568 took 0.00s
+---------Epoch 567 took 0.01s
+---------Epoch 568 took 0.01s
 ---------Epoch 569 took 0.01s
----------Epoch 570 took 0.00s
+---------Epoch 570 took 0.01s
 ---------Epoch 571 took 0.01s
----------Epoch 572 took 0.00s
----------Epoch 573 took 0.00s
-Step 2300. Evaluating losses: Exp Train: 0.031 | Dev: 0.025 (63.158% non-realizable matrices)
-Dev breakdown -> predict: 0.025 | regularize: 165.576 |
-(*) New best prediction loss: 0.0251676
+---------Epoch 572 took 0.01s
+---------Epoch 573 took 0.01s
+Step 2300. Evaluating losses: Exp Train: 0.032 | Dev: 0.035 (47.368% non-realizable matrices)
+Dev breakdown -> predict: 0.035 | regularize: 154.218 |
+(*) New best prediction loss: 0.0348017
 
 ---------Epoch 574 took 0.06s
 ---------Epoch 575 took 0.01s
@@ -679,22 +682,23 @@ Dev breakdown -> predict: 0.025 | regularize: 165.576 |
 ---------Epoch 587 took 0.01s
 ---------Epoch 588 took 0.01s
 ---------Epoch 589 took 0.01s
----------Epoch 590 took 0.00s
+---------Epoch 590 took 0.01s
 ---------Epoch 591 took 0.01s
----------Epoch 592 took 0.00s
+---------Epoch 592 took 0.01s
 ---------Epoch 593 took 0.01s
 ---------Epoch 594 took 0.01s
 ---------Epoch 595 took 0.01s
 ---------Epoch 596 took 0.01s
 ---------Epoch 597 took 0.01s
 ---------Epoch 598 took 0.01s
-Step 2400. Evaluating losses: Exp Train: 0.030 | Dev: 0.028 (57.895% non-realizable matrices)
-Dev breakdown -> predict: 0.028 | regularize: 170.031 |
+Step 2400. Evaluating losses: Exp Train: 0.031 | Dev: 0.033 (57.895% non-realizable matrices)
+Dev breakdown -> predict: 0.033 | regularize: 157.746 |
+(*) New best prediction loss: 0.0326925
 
----------Epoch 599 took 0.01s
+---------Epoch 599 took 0.06s
 ---------Epoch 600 took 0.01s
 ---------Epoch 601 took 0.01s
----------Epoch 602 took 0.01s
+---------Epoch 602 took 0.00s
 ---------Epoch 603 took 0.01s
 ---------Epoch 604 took 0.01s
 ---------Epoch 605 took 0.01s
@@ -703,8 +707,8 @@ Dev breakdown -> predict: 0.028 | regularize: 170.031 |
 ---------Epoch 608 took 0.01s
 ---------Epoch 609 took 0.01s
 ---------Epoch 610 took 0.01s
----------Epoch 611 took 0.00s
----------Epoch 612 took 0.00s
+---------Epoch 611 took 0.01s
+---------Epoch 612 took 0.01s
 ---------Epoch 613 took 0.01s
 ---------Epoch 614 took 0.01s
 ---------Epoch 615 took 0.01s
@@ -712,19 +716,19 @@ Dev breakdown -> predict: 0.028 | regularize: 170.031 |
 ---------Epoch 617 took 0.01s
 ---------Epoch 618 took 0.01s
 ---------Epoch 619 took 0.01s
----------Epoch 620 took 0.00s
----------Epoch 621 took 0.00s
+---------Epoch 620 took 0.01s
+---------Epoch 621 took 0.01s
 ---------Epoch 622 took 0.01s
----------Epoch 623 took 0.00s
-Step 2500. Evaluating losses: Exp Train: 0.031 | Dev: 0.024 (68.421% non-realizable matrices)
-Dev breakdown -> predict: 0.024 | regularize: 171.993 |
-(*) New best prediction loss: 0.0242851
+---------Epoch 623 took 0.01s
+Step 2500. Evaluating losses: Exp Train: 0.032 | Dev: 0.031 (57.895% non-realizable matrices)
+Dev breakdown -> predict: 0.031 | regularize: 161.380 |
+(*) New best prediction loss: 0.0313788
 
 ---------Epoch 624 took 0.06s
 ---------Epoch 625 took 0.01s
 ---------Epoch 626 took 0.01s
 ---------Epoch 627 took 0.01s
----------Epoch 628 took 0.01s
+---------Epoch 628 took 0.00s
 ---------Epoch 629 took 0.01s
 ---------Epoch 630 took 0.01s
 ---------Epoch 631 took 0.01s
@@ -745,8 +749,8 @@ Dev breakdown -> predict: 0.024 | regularize: 171.993 |
 ---------Epoch 646 took 0.01s
 ---------Epoch 647 took 0.01s
 ---------Epoch 648 took 0.01s
-Step 2600. Evaluating losses: Exp Train: 0.034 | Dev: 0.026 (68.421% non-realizable matrices)
-Dev breakdown -> predict: 0.026 | regularize: 173.946 |
+Step 2600. Evaluating losses: Exp Train: 0.031 | Dev: 0.033 (47.368% non-realizable matrices)
+Dev breakdown -> predict: 0.033 | regularize: 164.040 |
 
 ---------Epoch 649 took 0.01s
 ---------Epoch 650 took 0.01s
@@ -761,7 +765,7 @@ Dev breakdown -> predict: 0.026 | regularize: 173.946 |
 ---------Epoch 659 took 0.01s
 ---------Epoch 660 took 0.01s
 ---------Epoch 661 took 0.01s
----------Epoch 662 took 0.01s
+---------Epoch 662 took 0.00s
 ---------Epoch 663 took 0.01s
 ---------Epoch 664 took 0.01s
 ---------Epoch 665 took 0.01s
@@ -773,25 +777,25 @@ Dev breakdown -> predict: 0.026 | regularize: 173.946 |
 ---------Epoch 671 took 0.01s
 ---------Epoch 672 took 0.01s
 ---------Epoch 673 took 0.01s
-Step 2700. Evaluating losses: Exp Train: 0.031 | Dev: 0.026 (68.421% non-realizable matrices)
-Dev breakdown -> predict: 0.025 | regularize: 176.123 |
+Step 2700. Evaluating losses: Exp Train: 0.031 | Dev: 0.037 (31.579% non-realizable matrices)
+Dev breakdown -> predict: 0.037 | regularize: 166.732 |
 
 ---------Epoch 674 took 0.01s
----------Epoch 675 took 0.00s
----------Epoch 676 took 0.00s
----------Epoch 677 took 0.00s
----------Epoch 678 took 0.00s
----------Epoch 679 took 0.00s
----------Epoch 680 took 0.00s
+---------Epoch 675 took 0.01s
+---------Epoch 676 took 0.01s
+---------Epoch 677 took 0.01s
+---------Epoch 678 took 0.01s
+---------Epoch 679 took 0.01s
+---------Epoch 680 took 0.01s
 ---------Epoch 681 took 0.01s
----------Epoch 682 took 0.00s
----------Epoch 683 took 0.00s
----------Epoch 684 took 0.00s
----------Epoch 685 took 0.00s
+---------Epoch 682 took 0.01s
+---------Epoch 683 took 0.01s
+---------Epoch 684 took 0.01s
+---------Epoch 685 took 0.01s
 ---------Epoch 686 took 0.01s
 ---------Epoch 687 took 0.01s
 ---------Epoch 688 took 0.01s
----------Epoch 689 took 0.00s
+---------Epoch 689 took 0.01s
 ---------Epoch 690 took 0.01s
 ---------Epoch 691 took 0.01s
 ---------Epoch 692 took 0.01s
@@ -801,11 +805,11 @@ Dev breakdown -> predict: 0.025 | regularize: 176.123 |
 ---------Epoch 696 took 0.01s
 ---------Epoch 697 took 0.01s
 ---------Epoch 698 took 0.01s
-Step 2800. Evaluating losses: Exp Train: 0.027 | Dev: 0.023 (68.421% non-realizable matrices)
-Dev breakdown -> predict: 0.023 | regularize: 179.796 |
-(*) New best prediction loss: 0.0231192
+Step 2800. Evaluating losses: Exp Train: 0.030 | Dev: 0.030 (57.895% non-realizable matrices)
+Dev breakdown -> predict: 0.030 | regularize: 167.742 |
+(*) New best prediction loss: 0.0302778
 
----------Epoch 699 took 0.07s
+---------Epoch 699 took 0.06s
 ---------Epoch 700 took 0.01s
 ---------Epoch 701 took 0.01s
 ---------Epoch 702 took 0.01s
@@ -819,21 +823,22 @@ Dev breakdown -> predict: 0.023 | regularize: 179.796 |
 ---------Epoch 710 took 0.01s
 ---------Epoch 711 took 0.01s
 ---------Epoch 712 took 0.01s
----------Epoch 713 took 0.00s
----------Epoch 714 took 0.00s
+---------Epoch 713 took 0.01s
+---------Epoch 714 took 0.01s
 ---------Epoch 715 took 0.01s
----------Epoch 716 took 0.00s
----------Epoch 717 took 0.00s
+---------Epoch 716 took 0.01s
+---------Epoch 717 took 0.01s
 ---------Epoch 718 took 0.01s
----------Epoch 719 took 0.00s
+---------Epoch 719 took 0.01s
 ---------Epoch 720 took 0.01s
 ---------Epoch 721 took 0.01s
----------Epoch 722 took 0.00s
+---------Epoch 722 took 0.01s
 ---------Epoch 723 took 0.01s
-Step 2900. Evaluating losses: Exp Train: 0.030 | Dev: 0.024 (68.421% non-realizable matrices)
-Dev breakdown -> predict: 0.024 | regularize: 181.197 |
+Step 2900. Evaluating losses: Exp Train: 0.029 | Dev: 0.030 (57.895% non-realizable matrices)
+Dev breakdown -> predict: 0.030 | regularize: 170.628 |
+(*) New best prediction loss: 0.030225
 
----------Epoch 724 took 0.01s
+---------Epoch 724 took 0.06s
 ---------Epoch 725 took 0.01s
 ---------Epoch 726 took 0.01s
 ---------Epoch 727 took 0.01s
@@ -854,23 +859,24 @@ Dev breakdown -> predict: 0.024 | regularize: 181.197 |
 ---------Epoch 742 took 0.01s
 ---------Epoch 743 took 0.01s
 ---------Epoch 744 took 0.01s
----------Epoch 745 took 0.00s
+---------Epoch 745 took 0.01s
 ---------Epoch 746 took 0.01s
----------Epoch 747 took 0.00s
----------Epoch 748 took 0.00s
-Step 3000. Evaluating losses: Exp Train: 0.032 | Dev: 0.042 (84.211% non-realizable matrices)
-Dev breakdown -> predict: 0.042 | regularize: 185.657 |
+---------Epoch 747 took 0.01s
+---------Epoch 748 took 0.01s
+Step 3000. Evaluating losses: Exp Train: 0.030 | Dev: 0.030 (73.684% non-realizable matrices)
+Dev breakdown -> predict: 0.030 | regularize: 172.960 |
+(*) New best prediction loss: 0.0298014
 
----------Epoch 749 took 0.01s
----------Epoch 750 took 0.00s
+---------Epoch 749 took 0.06s
+---------Epoch 750 took 0.01s
 ---------Epoch 751 took 0.01s
 ---------Epoch 752 took 0.01s
 ---------Epoch 753 took 0.01s
 ---------Epoch 754 took 0.01s
 ---------Epoch 755 took 0.01s
----------Epoch 756 took 0.00s
+---------Epoch 756 took 0.01s
 ---------Epoch 757 took 0.01s
----------Epoch 758 took 0.00s
+---------Epoch 758 took 0.01s
 ---------Epoch 759 took 0.01s
 ---------Epoch 760 took 0.01s
 ---------Epoch 761 took 0.01s
@@ -878,27 +884,27 @@ Dev breakdown -> predict: 0.042 | regularize: 185.657 |
 ---------Epoch 763 took 0.01s
 ---------Epoch 764 took 0.01s
 ---------Epoch 765 took 0.01s
----------Epoch 766 took 0.00s
----------Epoch 767 took 0.00s
----------Epoch 768 took 0.00s
----------Epoch 769 took 0.00s
+---------Epoch 766 took 0.01s
+---------Epoch 767 took 0.01s
+---------Epoch 768 took 0.01s
+---------Epoch 769 took 0.01s
 ---------Epoch 770 took 0.01s
----------Epoch 771 took 0.00s
+---------Epoch 771 took 0.01s
 ---------Epoch 772 took 0.01s
----------Epoch 773 took 0.00s
-Step 3100. Evaluating losses: Exp Train: 0.028 | Dev: 0.023 (68.421% non-realizable matrices)
-Dev breakdown -> predict: 0.023 | regularize: 186.738 |
+---------Epoch 773 took 0.01s
+Step 3100. Evaluating losses: Exp Train: 0.031 | Dev: 0.032 (47.368% non-realizable matrices)
+Dev breakdown -> predict: 0.032 | regularize: 173.901 |
 
 ---------Epoch 774 took 0.01s
----------Epoch 775 took 0.00s
+---------Epoch 775 took 0.01s
 ---------Epoch 776 took 0.01s
----------Epoch 777 took 0.00s
----------Epoch 778 took 0.00s
+---------Epoch 777 took 0.01s
+---------Epoch 778 took 0.01s
 ---------Epoch 779 took 0.01s
----------Epoch 780 took 0.00s
----------Epoch 781 took 0.00s
+---------Epoch 780 took 0.01s
+---------Epoch 781 took 0.01s
 ---------Epoch 782 took 0.01s
----------Epoch 783 took 0.00s
+---------Epoch 783 took 0.01s
 ---------Epoch 784 took 0.00s
 ---------Epoch 785 took 0.01s
 ---------Epoch 786 took 0.01s
@@ -907,46 +913,47 @@ Dev breakdown -> predict: 0.023 | regularize: 186.738 |
 ---------Epoch 789 took 0.01s
 ---------Epoch 790 took 0.01s
 ---------Epoch 791 took 0.01s
----------Epoch 792 took 0.00s
----------Epoch 793 took 0.00s
+---------Epoch 792 took 0.01s
+---------Epoch 793 took 0.01s
 ---------Epoch 794 took 0.01s
 ---------Epoch 795 took 0.01s
 ---------Epoch 796 took 0.01s
----------Epoch 797 took 0.00s
+---------Epoch 797 took 0.01s
 ---------Epoch 798 took 0.01s
-Step 3200. Evaluating losses: Exp Train: 0.026 | Dev: 0.024 (63.158% non-realizable matrices)
-Dev breakdown -> predict: 0.024 | regularize: 189.702 |
+Step 3200. Evaluating losses: Exp Train: 0.028 | Dev: 0.029 (57.895% non-realizable matrices)
+Dev breakdown -> predict: 0.029 | regularize: 176.297 |
+(*) New best prediction loss: 0.0290644
 
----------Epoch 799 took 0.01s
+---------Epoch 799 took 0.07s
 ---------Epoch 800 took 0.01s
 ---------Epoch 801 took 0.01s
----------Epoch 802 took 0.00s
+---------Epoch 802 took 0.01s
 ---------Epoch 803 took 0.01s
 ---------Epoch 804 took 0.01s
----------Epoch 805 took 0.00s
----------Epoch 806 took 0.00s
----------Epoch 807 took 0.00s
+---------Epoch 805 took 0.01s
+---------Epoch 806 took 0.01s
+---------Epoch 807 took 0.01s
 ---------Epoch 808 took 0.01s
 ---------Epoch 809 took 0.01s
----------Epoch 810 took 0.00s
----------Epoch 811 took 0.00s
----------Epoch 812 took 0.00s
----------Epoch 813 took 0.00s
----------Epoch 814 took 0.00s
----------Epoch 815 took 0.00s
+---------Epoch 810 took 0.01s
+---------Epoch 811 took 0.01s
+---------Epoch 812 took 0.01s
+---------Epoch 813 took 0.01s
+---------Epoch 814 took 0.01s
+---------Epoch 815 took 0.01s
 ---------Epoch 816 took 0.01s
----------Epoch 817 took 0.00s
----------Epoch 818 took 0.00s
+---------Epoch 817 took 0.01s
+---------Epoch 818 took 0.01s
 ---------Epoch 819 took 0.01s
 ---------Epoch 820 took 0.01s
 ---------Epoch 821 took 0.01s
 ---------Epoch 822 took 0.00s
 ---------Epoch 823 took 0.01s
-Step 3300. Evaluating losses: Exp Train: 0.027 | Dev: 0.022 (68.421% non-realizable matrices)
-Dev breakdown -> predict: 0.022 | regularize: 191.137 |
-(*) New best prediction loss: 0.0224181
+Step 3300. Evaluating losses: Exp Train: 0.027 | Dev: 0.028 (57.895% non-realizable matrices)
+Dev breakdown -> predict: 0.028 | regularize: 179.730 |
+(*) New best prediction loss: 0.0277981
 
----------Epoch 824 took 0.05s
+---------Epoch 824 took 0.06s
 ---------Epoch 825 took 0.01s
 ---------Epoch 826 took 0.01s
 ---------Epoch 827 took 0.01s
@@ -956,42 +963,42 @@ Dev breakdown -> predict: 0.022 | regularize: 191.137 |
 ---------Epoch 831 took 0.01s
 ---------Epoch 832 took 0.01s
 ---------Epoch 833 took 0.01s
----------Epoch 834 took 0.00s
+---------Epoch 834 took 0.01s
 ---------Epoch 835 took 0.01s
 ---------Epoch 836 took 0.01s
----------Epoch 837 took 0.00s
+---------Epoch 837 took 0.01s
 ---------Epoch 838 took 0.01s
 ---------Epoch 839 took 0.01s
----------Epoch 840 took 0.00s
----------Epoch 841 took 0.00s
----------Epoch 842 took 0.00s
----------Epoch 843 took 0.00s
----------Epoch 844 took 0.00s
+---------Epoch 840 took 0.01s
+---------Epoch 841 took 0.01s
+---------Epoch 842 took 0.01s
+---------Epoch 843 took 0.01s
+---------Epoch 844 took 0.01s
 ---------Epoch 845 took 0.01s
 ---------Epoch 846 took 0.01s
 ---------Epoch 847 took 0.01s
 ---------Epoch 848 took 0.01s
-Step 3400. Evaluating losses: Exp Train: 0.032 | Dev: 0.025 (73.684% non-realizable matrices)
-Dev breakdown -> predict: 0.025 | regularize: 194.197 |
+Step 3400. Evaluating losses: Exp Train: 0.029 | Dev: 0.028 (57.895% non-realizable matrices)
+Dev breakdown -> predict: 0.028 | regularize: 182.311 |
 
 ---------Epoch 849 took 0.01s
----------Epoch 850 took 0.00s
+---------Epoch 850 took 0.01s
 ---------Epoch 851 took 0.01s
----------Epoch 852 took 0.00s
+---------Epoch 852 took 0.01s
 ---------Epoch 853 took 0.01s
 ---------Epoch 854 took 0.01s
----------Epoch 855 took 0.00s
----------Epoch 856 took 0.00s
----------Epoch 857 took 0.00s
+---------Epoch 855 took 0.01s
+---------Epoch 856 took 0.01s
+---------Epoch 857 took 0.01s
 ---------Epoch 858 took 0.01s
----------Epoch 859 took 0.00s
----------Epoch 860 took 0.00s
+---------Epoch 859 took 0.01s
+---------Epoch 860 took 0.01s
 ---------Epoch 861 took 0.01s
----------Epoch 862 took 0.00s
----------Epoch 863 took 0.00s
----------Epoch 864 took 0.00s
----------Epoch 865 took 0.00s
----------Epoch 866 took 0.00s
+---------Epoch 862 took 0.01s
+---------Epoch 863 took 0.01s
+---------Epoch 864 took 0.01s
+---------Epoch 865 took 0.01s
+---------Epoch 866 took 0.01s
 ---------Epoch 867 took 0.01s
 ---------Epoch 868 took 0.01s
 ---------Epoch 869 took 0.01s
@@ -999,8 +1006,8 @@ Dev breakdown -> predict: 0.025 | regularize: 194.197 |
 ---------Epoch 871 took 0.01s
 ---------Epoch 872 took 0.01s
 ---------Epoch 873 took 0.01s
-Step 3500. Evaluating losses: Exp Train: 0.033 | Dev: 0.025 (68.421% non-realizable matrices)
-Dev breakdown -> predict: 0.025 | regularize: 194.166 |
+Step 3500. Evaluating losses: Exp Train: 0.027 | Dev: 0.029 (52.632% non-realizable matrices)
+Dev breakdown -> predict: 0.029 | regularize: 184.288 |
 
 ---------Epoch 874 took 0.01s
 ---------Epoch 875 took 0.01s
@@ -1014,21 +1021,21 @@ Dev breakdown -> predict: 0.025 | regularize: 194.166 |
 ---------Epoch 883 took 0.01s
 ---------Epoch 884 took 0.01s
 ---------Epoch 885 took 0.01s
----------Epoch 886 took 0.00s
----------Epoch 887 took 0.00s
----------Epoch 888 took 0.00s
+---------Epoch 886 took 0.01s
+---------Epoch 887 took 0.01s
+---------Epoch 888 took 0.01s
 ---------Epoch 889 took 0.01s
 ---------Epoch 890 took 0.01s
 ---------Epoch 891 took 0.01s
----------Epoch 892 took 0.00s
+---------Epoch 892 took 0.01s
 ---------Epoch 893 took 0.01s
 ---------Epoch 894 took 0.01s
 ---------Epoch 895 took 0.01s
 ---------Epoch 896 took 0.01s
 ---------Epoch 897 took 0.01s
 ---------Epoch 898 took 0.01s
-Step 3600. Evaluating losses: Exp Train: 0.026 | Dev: 0.023 (68.421% non-realizable matrices)
-Dev breakdown -> predict: 0.022 | regularize: 196.198 |
+Step 3600. Evaluating losses: Exp Train: 0.025 | Dev: 0.028 (57.895% non-realizable matrices)
+Dev breakdown -> predict: 0.028 | regularize: 187.043 |
 
 ---------Epoch 899 took 0.01s
 ---------Epoch 900 took 0.01s
@@ -1045,18 +1052,18 @@ Dev breakdown -> predict: 0.022 | regularize: 196.198 |
 ---------Epoch 911 took 0.01s
 ---------Epoch 912 took 0.01s
 ---------Epoch 913 took 0.01s
----------Epoch 914 took 0.00s
----------Epoch 915 took 0.00s
+---------Epoch 914 took 0.01s
+---------Epoch 915 took 0.01s
 ---------Epoch 916 took 0.01s
 ---------Epoch 917 took 0.01s
 ---------Epoch 918 took 0.01s
 ---------Epoch 919 took 0.01s
 ---------Epoch 920 took 0.01s
 ---------Epoch 921 took 0.01s
----------Epoch 922 took 0.00s
----------Epoch 923 took 0.00s
-Step 3700. Evaluating losses: Exp Train: 0.035 | Dev: 0.036 (47.368% non-realizable matrices)
-Dev breakdown -> predict: 0.036 | regularize: 197.725 |
+---------Epoch 922 took 0.01s
+---------Epoch 923 took 0.01s
+Step 3700. Evaluating losses: Exp Train: 0.034 | Dev: 0.043 (26.316% non-realizable matrices)
+Dev breakdown -> predict: 0.043 | regularize: 189.260 |
 
 ---------Epoch 924 took 0.01s
 ---------Epoch 925 took 0.01s
@@ -1070,51 +1077,53 @@ Dev breakdown -> predict: 0.036 | regularize: 197.725 |
 ---------Epoch 933 took 0.01s
 ---------Epoch 934 took 0.01s
 ---------Epoch 935 took 0.01s
----------Epoch 936 took 0.00s
----------Epoch 937 took 0.00s
----------Epoch 938 took 0.00s
+---------Epoch 936 took 0.01s
+---------Epoch 937 took 0.01s
+---------Epoch 938 took 0.01s
 ---------Epoch 939 took 0.01s
 ---------Epoch 940 took 0.01s
 ---------Epoch 941 took 0.01s
 ---------Epoch 942 took 0.01s
 ---------Epoch 943 took 0.01s
 ---------Epoch 944 took 0.01s
----------Epoch 945 took 0.00s
+---------Epoch 945 took 0.01s
 ---------Epoch 946 took 0.01s
----------Epoch 947 took 0.00s
+---------Epoch 947 took 0.01s
 ---------Epoch 948 took 0.01s
-Step 3800. Evaluating losses: Exp Train: 0.027 | Dev: 0.023 (68.421% non-realizable matrices)
-Dev breakdown -> predict: 0.023 | regularize: 199.218 |
+Step 3800. Evaluating losses: Exp Train: 0.029 | Dev: 0.026 (73.684% non-realizable matrices)
+Dev breakdown -> predict: 0.026 | regularize: 190.494 |
+(*) New best prediction loss: 0.0259139
 
----------Epoch 949 took 0.01s
----------Epoch 950 took 0.00s
----------Epoch 951 took 0.00s
----------Epoch 952 took 0.01s
+---------Epoch 949 took 0.06s
+---------Epoch 950 took 0.01s
+---------Epoch 951 took 0.01s
+---------Epoch 952 took 0.00s
 ---------Epoch 953 took 0.01s
 ---------Epoch 954 took 0.01s
----------Epoch 955 took 0.00s
+---------Epoch 955 took 0.01s
 ---------Epoch 956 took 0.01s
----------Epoch 957 took 0.00s
----------Epoch 958 took 0.00s
+---------Epoch 957 took 0.01s
+---------Epoch 958 took 0.01s
 ---------Epoch 959 took 0.01s
----------Epoch 960 took 0.01s
+---------Epoch 960 took 0.00s
 ---------Epoch 961 took 0.01s
 ---------Epoch 962 took 0.01s
----------Epoch 963 took 0.00s
----------Epoch 964 took 0.00s
+---------Epoch 963 took 0.01s
+---------Epoch 964 took 0.01s
 ---------Epoch 965 took 0.01s
 ---------Epoch 966 took 0.01s
 ---------Epoch 967 took 0.01s
 ---------Epoch 968 took 0.01s
 ---------Epoch 969 took 0.01s
 ---------Epoch 970 took 0.01s
----------Epoch 971 took 0.00s
+---------Epoch 971 took 0.01s
 ---------Epoch 972 took 0.01s
 ---------Epoch 973 took 0.01s
-Step 3900. Evaluating losses: Exp Train: 0.028 | Dev: 0.023 (73.684% non-realizable matrices)
-Dev breakdown -> predict: 0.023 | regularize: 201.502 |
+Step 3900. Evaluating losses: Exp Train: 0.026 | Dev: 0.026 (84.211% non-realizable matrices)
+Dev breakdown -> predict: 0.026 | regularize: 193.804 |
+(*) New best prediction loss: 0.0257313
 
----------Epoch 974 took 0.01s
+---------Epoch 974 took 0.06s
 ---------Epoch 975 took 0.01s
 ---------Epoch 976 took 0.01s
 ---------Epoch 977 took 0.01s
@@ -1131,19 +1140,19 @@ Dev breakdown -> predict: 0.023 | regularize: 201.502 |
 ---------Epoch 988 took 0.01s
 ---------Epoch 989 took 0.01s
 ---------Epoch 990 took 0.01s
----------Epoch 991 took 0.00s
----------Epoch 992 took 0.00s
+---------Epoch 991 took 0.01s
+---------Epoch 992 took 0.01s
 ---------Epoch 993 took 0.01s
 ---------Epoch 994 took 0.01s
 ---------Epoch 995 took 0.01s
 ---------Epoch 996 took 0.01s
 ---------Epoch 997 took 0.01s
 ---------Epoch 998 took 0.01s
-Step 4000. Evaluating losses: Exp Train: 0.038 | Dev: 0.045 (42.105% non-realizable matrices)
-Dev breakdown -> predict: 0.045 | regularize: 202.984 |
+Step 4000. Evaluating losses: Exp Train: 0.034 | Dev: 0.034 (42.105% non-realizable matrices)
+Dev breakdown -> predict: 0.034 | regularize: 194.805 |
 
 ---------Epoch 999 took 0.01s
-End model has dev prediction loss 0.0446252... Done!
+End model has dev prediction loss 0.0343222... Done!
 Saving to disk... Done.
 
 gradu has shape (20, 3, 3)
@@ -1203,12 +1212,12 @@ This model has 18 trainable parameters. They are:
 	 shape: (30, 10) size: 300
 17: model/FC_last/fully_connected/biases:0
 	 shape: (10,) size: 10
-JICF r=1 LEVM loss: 0.0524225
-JICF r=1 TBNN-s loss: 0.030139
+JICF r=1 LEVM loss: 0.0569511
+JICF r=1 TBNN-s loss: 0.0264519
 
 Cleaning predicted anisotropy tensor... Done! It took 0.0s
 0 points (0.00% of total) were cleaned due to outlier inputs.
-11 points (55.00% of total) were cleaned due to non-realizable tensors.
+16 points (80.00% of total) were cleaned due to non-realizable tensors.
 In cleaned anisotropy tensor: 0 violations detected
 Predicted anisotropy shape:  (20, 3, 3)
 Predicted coefficients g_n shape:  (20, 10)
