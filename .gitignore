@@ -4,3 +4,5 @@ checkpoints
 *.pckl
 *.dat
 *.pyc
+*.py.swp
+output.txt
