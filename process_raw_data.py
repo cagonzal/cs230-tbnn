@@ -1,5 +1,15 @@
 import numpy as np 
 
+def rans_filter(x, w):
+    if x.ndim > 1 and x.shape[1] > 1:
+        out = np.empty_like(x)
+        for ii in range(x.shape[1]):
+            out[:,ii] = np.convolve(x[:,ii], np.ones(w), 'same') / w
+    else:
+        out = np.convolve(x, np.ones(w), 'same') / w
+
+    return out
+
 def integrity_basis(shat, rhat):
 
     '''

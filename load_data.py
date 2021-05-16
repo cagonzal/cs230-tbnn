@@ -1,17 +1,5 @@
 import numpy as np 
 
-def load_data(filepath,ny,ncols):
-    count = 0
-    data = np.empty([ny, ncols])
-    with open(filepath) as fp:
-        for line in fp:
-            if line[0] != "%":
-                proc_line = (line.strip()).split()
-                data[count,:] = np.asarray(proc_line,dtype=np.float)
-                count += 1
-
-    return data
-
 def load_fluc_data(filepath,Ny):
     ncols = 9
     count = 0
@@ -25,12 +13,14 @@ def load_fluc_data(filepath,Ny):
 
     #y = data[:,0]
     #yp = data[:,1]
-    uus = data[:,2:8]
+    #uu = data[:,2]
     #vv = data[:,3]
     #ww = data[:,4]
     #uv = data[:,5]
     #uw = data[:,6]
     #vw = data[:,7]
+
+    uus = data[:,2:8]
     tke = data[:,8]
 
     return uus, tke

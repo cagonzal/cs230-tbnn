@@ -8,6 +8,8 @@ import sys
 import load_data as ld
 import process_raw_data as pd
 
+fsize = 3
+
 # Load data
 filepath_mean = 'data/re550/LM_Channel_0550_mean_prof.dat'
 filepath_fluc = 'data/re550/LM_Channel_0550_vel_fluc_prof.dat'
@@ -16,19 +18,24 @@ Ny_raw = 192
 nu = 1 * 10**(-4) # from the data file
 
 # y/delta, y+, U, dU/dy, W, P
-#meanData = ld.load_data(filepath_mean, Ny, 6)
 y_raw, U_raw, dUdy_raw = ld.load_mean_data(filepath_mean, Ny_raw)
-print("y_raw has shape " + str(y_raw.shape))
-print("U_raw has shape " + str(U_raw.shape))
-
 
 # y/delta, y+, u'u', v'v', w'w', u'v', u'w', v'w', k
 uus_raw, tke_raw = ld.load_fluc_data(filepath_fluc, Ny_raw)
 
-# Temp fix for raw
-Ny = Ny_raw
-dUdy = dUdy_raw
-uus = uus_raw
+print("y_raw has shape " + str(y_raw.shape))
+#print("u_raw has shape " + str(u_raw.shape))
+
+# Filter for synthetic RANS
+y = pd.rans_filter(y_raw, fsize)
+U = pd.rans_filter(U_raw, fsize)
+dUdy = pd.rans_filter(dUdy_raw, fsize)
+tke = pd.rans_filter(tke_raw, fsize)
+uus = pd.rans_filter(uus_raw, fsize)
+
+print("y has shape " + str(y.shape))
+Ny = y.shape[0]
+print("uus has shape " + str(uus.shape))
 
 # Process data
 #vol = pd.compute_cell_volumes(y, Ny)
@@ -36,9 +43,7 @@ uus = uus_raw
 gradu = pd.compute_gradu(dUdy, Ny)
 print("gradu has shape " + str(gradu.shape))
 
-#tke = pd.compute_tke(flucData, Ny)
-tke_raw = np.squeeze(tke_raw)
-tke = tke_raw
+tke = np.squeeze(tke)
 print("tke has shape " + str(tke.shape))
 
 
