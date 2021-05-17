@@ -15,14 +15,14 @@ def trainNetwork(x_train, tb_train, b_train, x_dev, tb_dev, b_dev,
     # num features used to be 7
     FLAGS['num_features'] = 3 # number of features to be used
     FLAGS['num_basis'] = 10 # number of tensor basis in the expansion
-    FLAGS['num_layers'] = 8 # number of hidden layers
-    FLAGS['num_neurons'] = 30 # number of hidden units in each layer
+    FLAGS['num_layers'] = 10 # number of hidden layers 8 
+    FLAGS['num_neurons'] = 30 # number of hidden units in each layer 30 
     
     FLAGS['learning_rate'] = 1e-3 # learning rate for SGD algorithm
     FLAGS['num_epochs'] = 1000 # maximum number of epochs to run
     FLAGS['early_stop_dev'] = 20 # after this many evaluations without improvement, stop training           
     FLAGS['eval_every'] = 100 # when to evaluate losses
-    FLAGS['train_batch_size'] = 50 # number of points per batch
+    FLAGS['train_batch_size'] = 20 # number of points per batch
     
     FLAGS['loss_type'] = 'l2' # loss type    
     FLAGS['c_reg'] = 1e-7 # L2 regularization strength   
@@ -37,11 +37,13 @@ def trainNetwork(x_train, tb_train, b_train, x_dev, tb_dev, b_dev,
     path_class = 'nn_test_tbnn.pckl'
     
     # Train and save to disk
-    nn.train(path_params,
+    best_dev_loss, end_dev_loss, step_list, train_loss_list, dev_loss_list = nn.train(path_params,
              x_train, tb_train, b_train, x_dev, tb_dev, b_dev,
              train_loss_weight=loss_weight_train, dev_loss_weight=loss_weight_dev,
              detailed_losses=True)
     nn.saveToDisk("Testing TBNN", path_class)
+
+    return best_dev_loss, end_dev_loss, step_list, train_loss_list, dev_loss_list
   
 
 def applyNetwork(x_test, tb_test, b_test, gradu_test, nut_test, tke_test):
@@ -66,7 +68,9 @@ def applyNetwork(x_test, tb_test, b_test, gradu_test, nut_test, tke_test):
     # This can be used in a RANS solver to get improved velocity field predictions
     b_pred, g = nn.getTotalAnisotropy(x_test, tb_test)    
     print("Predicted anisotropy shape: ", b_pred.shape)
-    print("Predicted coefficients g_n shape: ", g.shape)    
+    print("Predicted coefficients g_n shape: ", g.shape)
+
+    return b_pred, g
     
 
 

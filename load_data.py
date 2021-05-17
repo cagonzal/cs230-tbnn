@@ -47,3 +47,29 @@ def load_mean_data(filepath, Ny):
     #P = data[:,5]
 
     return y, U, dUdy
+
+
+def load_tke_data(filepath, Ny):
+    ncols = 9
+    count = 0
+    data = np.empty([Ny, ncols])
+
+    with open(filepath) as fp:
+        for line in fp:
+            if line[0] != "%":
+                proc_line = (line.strip()).split()
+                data[count,:] = np.asarray(proc_line,dtype=np.float)
+                count += 1
+
+    y = data[:,0]
+    #yp = data[:,1]
+    #prod = data[:,2]
+    #turb_trans = data[:,3]
+    #visc_trans = data[:,4]
+    #press_strain = data[:,5]
+    #press_trans = data[:,6]
+    eps = data[:,7]
+    #balance = data[:,8]
+
+    return eps
+    

@@ -5,8 +5,12 @@ def rans_filter(x, w):
         out = np.empty_like(x)
         for ii in range(x.shape[1]):
             out[:,ii] = np.convolve(x[:,ii], np.ones(w), 'same') / w
+            out[-1,ii] = (x[-1,ii] + x[-2,ii] + x[-3,ii]) / w
+            out[-2,ii] = (x[-2,ii] + x[-1,ii] + x[-2,ii]) / w
     else:
         out = np.convolve(x, np.ones(w), 'same') / w
+        out[-1] = (x[-1] + x[-2] + x[-3]) / w
+        out[-2] = (x[-2] + x[-1] + x[-2]) / w
 
     return out
 
@@ -20,7 +24,7 @@ def integrity_basis(shat, rhat):
     '''
 
     basis = np.empty([10, 3, 3])
-    eye = np.ones([3,3])
+    eye = np.identity(3)
 
     t1  = shat
     t2  = shat @ rhat - rhat @ shat
@@ -69,6 +73,8 @@ def compute_invariants(shat,rhat):
     lam = np.empty([1,3])
     lam[0,0] = np.trace(shat @ shat)
     lam[0,1] = np.trace(rhat @ rhat)
+    #lam[0,2] = np.trace(shat @ shat @ shat)
+    #lam[0,3] = np.trace(rhat @ rhat @ shat)
     lam[0,2] = np.trace(rhat @ rhat @ shat @ shat)
 
     return lam 
@@ -83,9 +89,9 @@ def compute_rate_tensors(gradu, Ny):
 
 def compute_dissipation(sij, nu, Ny):
 
-    eps = np.empty([Ny,1])
+    eps = np.empty([Ny])
     for ii in range(Ny):
-        eps[ii,0] = -2 * nu * np.tensordot(sij[ii,:,:], sij[ii,:,:])
+        eps[ii] = -2 * nu * np.tensordot(sij[ii,:,:], sij[ii,:,:])
 
     return eps
 
@@ -93,10 +99,10 @@ def normalize_rate_tensors(sij, oij, tke, eps, Ny):
 
     buf = tke / (2 * eps)
 
-    shat = np.transpose(sij,(1,2,0)) * buf[:,0]
+    shat = np.transpose(sij,(1,2,0)) * buf
     shat = np.transpose(shat, (2,0,1))
 
-    rhat = np.transpose(oij,(1,2,0)) * buf[:,0]
+    rhat = np.transpose(oij,(1,2,0)) * buf
     rhat = np.transpose(rhat, (2,0,1))
 
     return shat, rhat
@@ -161,7 +167,7 @@ def compute_bij(uus, tke, Ny):
         buf = np.array([[uus[ii,0], uus[ii,3], uus[ii,4]],\
                         [uus[ii,3], uus[ii,1], uus[ii,5]],\
                         [uus[ii,4], uus[ii,5], uus[ii,2]] ])
-        k_dij = np.ones([3,3]) * tke[ii]
+        k_dij = np.identity(3) * tke[ii]
 
         aij[ii,:,:] = buf - 2/3 * k_dij
         bij[ii,:,:] = aij[ii,:,:] / (2 * tke[ii])

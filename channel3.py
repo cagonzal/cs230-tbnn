@@ -13,14 +13,18 @@ import apply_tbnn as apptb
 random.seed(10)
 fsize = 3
 
-Ny = 192
-#Ny = 256
+Ny_test = 192
+Ny = 256
 nu = 1 * 10**(-4) # from the data file
 
 # Filenames
-filepath_mean = 'data/re550/LM_Channel_0550_mean_prof.dat'
-filepath_fluc = 'data/re550/LM_Channel_0550_vel_fluc_prof.dat'
-filepath_tke  = 'data/re550/LM_Channel_0550_RSTE_k_prof.dat'
+filepath_mean = 'data/re550/LM_Channel_1000_mean_prof.dat'
+filepath_fluc = 'data/re550/LM_Channel_1000_vel_fluc_prof.dat'
+filepath_tke  = 'data/re550/LM_Channel_1000_RSTE_k_prof.dat'
+
+filepath_mean_test = 'data/re550/LM_Channel_0550_mean_prof.dat'
+filepath_fluc_test = 'data/re550/LM_Channel_0550_vel_fluc_prof.dat'
+filepath_tke_test  = 'data/re550/LM_Channel_0550_RSTE_k_prof.dat'
 
 # Load data
 # y/delta, y+, U, dU/dy, W, P
@@ -29,6 +33,13 @@ y_raw, U_raw, dUdy_raw = ld.load_mean_data(filepath_mean, Ny)
 uus_raw, tke_raw = ld.load_fluc_data(filepath_fluc, Ny)
 # y/delta, y+, ...
 eps_raw = ld.load_tke_data(filepath_tke, Ny)
+
+# y/delta, y+, U, dU/dy, W, P
+y_test, U_test, dUdy_test = ld.load_mean_data(filepath_mean_test, Ny_test)
+# y/delta, y+, u'u', v'v', w'w', u'v', u'w', v'w', k
+uus_test, tke_test = ld.load_fluc_data(filepath_fluc_test, Ny_test)
+# y/delta, y+, ...
+eps_test = ld.load_tke_data(filepath_tke_test, Ny_test)
 
 # Filter for synthetic RANS
 y_filt    = pd.rans_filter(y_raw,    fsize)
@@ -68,19 +79,12 @@ uus_train  = uus_filt_sh[0:ind_train,:]
 tke_train  = tke_filt_sh[0:ind_train]
 eps_train  = eps_filt_sh[0:ind_train]
 
-y_dev    = y_raw_sh[ind_train:ind_dev]
-U_dev    = U_raw_sh[ind_train:ind_dev]
-dUdy_dev = dUdy_raw_sh[ind_train:ind_dev]
-uus_dev  = uus_raw_sh[ind_train:ind_dev,:]
-tke_dev  = tke_raw_sh[ind_train:ind_dev]
-eps_dev  = eps_raw_sh[ind_train:ind_dev]
-
-y_test    = y_raw_sh[ind_dev:]
-U_test    = U_raw_sh[ind_dev:]
-dUdy_test = dUdy_raw_sh[ind_dev:]
-uus_test  = uus_raw_sh[ind_dev:,:]
-tke_test  = tke_raw_sh[ind_dev:]
-eps_test  = eps_raw_sh[ind_dev:]
+y_dev    = y_raw_sh[ind_train:]
+U_dev    = U_raw_sh[ind_train:]
+dUdy_dev = dUdy_raw_sh[ind_train:]
+uus_dev  = uus_raw_sh[ind_train:,:]
+tke_dev  = tke_raw_sh[ind_train:]
+eps_dev  = eps_raw_sh[ind_train:]
 
 Ntrain = U_train.shape[0]
 Ndev   = U_dev.shape[0]
@@ -184,18 +188,15 @@ plt.plot(step_list, dev_loss_list[:,0], label='dev')
 plt.xlabel('step')
 plt.ylabel('loss')
 plt.legend(loc = 'upper right')
-plt.savefig('loss.png', bbox_inches='tight')
+plt.savefig('loss3.png', bbox_inches='tight')
 
 
 plt.figure()
 plt.semilogx(y_test * 550, b_pred[:,0,1],'x', label='tbnn')
 # plt.plot(y_test, bij_test[:,0,1],'+', label='test')
-plt.semilogx(y_raw * 550, bij_raw[:,0,1],'-',label='truth')
+plt.semilogx(y_raw * 1000, bij_raw[:,0,1],'-',label='truth')
 # plt.plot(y_train, bij_train[:,0,1],'+',label='filter')
 plt.ylabel(r'$b_{uv}$')
 plt.xlabel(r'$y^+$')
 plt.legend(loc='lower left')
-#axes = plt.gca()
-#axes.set_ylim([-2, 25])
-
-plt.savefig('tbnn_performance.png', bbox_inches='tight')
+plt.savefig('tbnn_performance3.png', bbox_inches='tight')

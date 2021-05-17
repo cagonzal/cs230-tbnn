@@ -13,14 +13,14 @@ import apply_tbnn as apptb
 random.seed(10)
 fsize = 3
 
-Ny = 192
-#Ny = 256
+#Ny = 192
+Ny = 256
 nu = 1 * 10**(-4) # from the data file
 
 # Filenames
-filepath_mean = 'data/re550/LM_Channel_0550_mean_prof.dat'
-filepath_fluc = 'data/re550/LM_Channel_0550_vel_fluc_prof.dat'
-filepath_tke  = 'data/re550/LM_Channel_0550_RSTE_k_prof.dat'
+filepath_mean = 'data/re550/LM_Channel_1000_mean_prof.dat'
+filepath_fluc = 'data/re550/LM_Channel_1000_vel_fluc_prof.dat'
+filepath_tke  = 'data/re550/LM_Channel_1000_RSTE_k_prof.dat'
 
 # Load data
 # y/delta, y+, U, dU/dy, W, P
@@ -184,18 +184,15 @@ plt.plot(step_list, dev_loss_list[:,0], label='dev')
 plt.xlabel('step')
 plt.ylabel('loss')
 plt.legend(loc = 'upper right')
-plt.savefig('loss.png', bbox_inches='tight')
+plt.savefig('loss2.png', bbox_inches='tight')
 
 
 plt.figure()
-plt.semilogx(y_test * 550, b_pred[:,0,1],'x', label='tbnn')
+plt.semilogx(y_test * 1000, b_pred[:,0,1],'x', label='tbnn')
 # plt.plot(y_test, bij_test[:,0,1],'+', label='test')
-plt.semilogx(y_raw * 550, bij_raw[:,0,1],'-',label='truth')
+plt.semilogx(y_raw * 1000, bij_raw[:,0,1],'-',label='truth')
 # plt.plot(y_train, bij_train[:,0,1],'+',label='filter')
 plt.ylabel(r'$b_{uv}$')
 plt.xlabel(r'$y^+$')
 plt.legend(loc='lower left')
-#axes = plt.gca()
-#axes.set_ylim([-2, 25])
-
-plt.savefig('tbnn_performance.png', bbox_inches='tight')
+plt.savefig('tbnn_performance2.png', bbox_inches='tight')
