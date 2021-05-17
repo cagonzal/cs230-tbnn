@@ -6,4 +6,4 @@ checkpoints
 *.pyc
 *.py.swp
 *.jpg
-output.txt
+output*.txt
