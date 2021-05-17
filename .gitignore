@@ -5,4 +5,5 @@ checkpoints
 *.dat
 *.pyc
 *.py.swp
+*.jpg
 output.txt

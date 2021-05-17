@@ -18,9 +18,9 @@ Ny = 192
 nu = 1 * 10**(-4) # from the data file
 
 # Filenames
-filepath_mean = 'data/re550/LM_Channel_0550_mean_prof.dat'
-filepath_fluc = 'data/re550/LM_Channel_0550_vel_fluc_prof.dat'
-filepath_tke  = 'data/re550/LM_Channel_0550_RSTE_k_prof.dat'
+filepath_mean = 'data/re0550/LM_Channel_0550_mean_prof.dat'
+filepath_fluc = 'data/re0550/LM_Channel_0550_vel_fluc_prof.dat'
+filepath_tke  = 'data/re0550/LM_Channel_0550_RSTE_k_prof.dat'
 
 # Load data
 # y/delta, y+, U, dU/dy, W, P
