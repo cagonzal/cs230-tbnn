@@ -144,9 +144,9 @@ def compute_tke(flucData, Ny):
 
 def compute_nut(aij, sij, Ny):
     # eddy viscosity nu_t
-    nut = np.empty([Ny,1])
+    nut = np.empty([Ny])
     for ii in range(Ny):
-        nut[ii,0] = -aij[ii,0,1] / (2 * sij[ii,0,1])
+        nut[ii] = -aij[ii,0,1] / (2 * sij[ii,0,1])
 
     return nut
 
