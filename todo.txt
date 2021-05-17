@@ -1,5 +1,0 @@
-- break down process_raw_data.py functions
-- commenting
-- get rid of all the Nys
-- vectorize
-- break apart flucdata load
