@@ -15,18 +15,18 @@ def trainNetwork(x_train, tb_train, b_train, x_dev, tb_dev, b_dev,
     # num features used to be 7
     FLAGS['num_features'] = 3 # number of features to be used
     FLAGS['num_basis'] = 10 # number of tensor basis in the expansion
-    FLAGS['num_layers'] = 10 # number of hidden layers 8 
-    FLAGS['num_neurons'] = 30 # number of hidden units in each layer 30 
+    FLAGS['num_layers'] = 25 # number of hidden layers 8 
+    FLAGS['num_neurons'] = 100 # number of hidden units in each layer 30 
     
-    FLAGS['learning_rate'] = 1e-3 # learning rate for SGD algorithm
-    FLAGS['num_epochs'] = 1000 # maximum number of epochs to run
+    FLAGS['learning_rate'] = 2.5e-5 # learning rate for SGD algorithm
+    FLAGS['num_epochs'] = 2000 # maximum number of epochs to run
     FLAGS['early_stop_dev'] = 20 # after this many evaluations without improvement, stop training           
     FLAGS['eval_every'] = 100 # when to evaluate losses
     FLAGS['train_batch_size'] = 10 # number of points per batch
     
     FLAGS['loss_type'] = 'l2' # loss type    
     FLAGS['c_reg'] = 1e-7 # L2 regularization strength   
-    FLAGS['drop_prob'] = 0 # dropout probability at training time   
+    FLAGS['drop_prob'] = 0.0 # dropout probability at training time   
      
     # Initialize TBNN with given FLAGS
     nn = TBNN()

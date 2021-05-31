@@ -9,7 +9,8 @@ import process_raw_data as pd
 import apply_tbnn as apptb
 
 # Input/Settings
-random.seed(10)
+seed_no = 2
+np.random.seed(1)
 fsize = 3
 
 Ny = 192
@@ -18,9 +19,9 @@ nu = 1 * 10**(-4) # from the data file
 
 
 # Filenames
-filepath_mean = 'data/re0550/LM_Channel_0550_mean_prof.dat'
-filepath_fluc = 'data/re0550/LM_Channel_0550_vel_fluc_prof.dat'
-filepath_tke  = 'data/re0550/LM_Channel_0550_RSTE_k_prof.dat'
+filepath_mean = 'data/channel/re0550/LM_Channel_0550_mean_prof.dat'
+filepath_fluc = 'data/channel/re0550/LM_Channel_0550_vel_fluc_prof.dat'
+filepath_tke  = 'data/channel/re0550/LM_Channel_0550_RSTE_k_prof.dat'
 
 
 # Load data
@@ -147,7 +148,7 @@ plt.plot(step_list, dev_loss_list[:,0], label='Dev')
 plt.xlabel('Step')
 plt.ylabel('Loss')
 plt.legend(loc = 'upper right')
-plt.savefig('figs/loss1.png', bbox_inches='tight')
+plt.savefig(f'figs/channel/loss1_{seed_no}.png', bbox_inches='tight')
 
 
 plt.figure()
@@ -156,4 +157,4 @@ plt.semilogx(y_raw * Re, bij_raw[:,0,1],'-',label='DNS')
 plt.ylabel(r'$b_{uv}$')
 plt.xlabel(r'$y^+$')
 plt.legend(loc='lower left')
-plt.savefig('figs/tbnn1.png', bbox_inches='tight')
+plt.savefig(f'figs/channel/tbnn1_{seed_no}.png', bbox_inches='tight')
