@@ -22,9 +22,9 @@ def trainNetwork(x_train, tb_train, b_train, x_dev, tb_dev, b_dev,
     FLAGS['num_epochs'] = 2000 # maximum number of epochs to run
     FLAGS['early_stop_dev'] = 20 # after this many evaluations without improvement, stop training           
     FLAGS['eval_every'] = 100 # when to evaluate losses
-    FLAGS['train_batch_size'] = 10 # number of points per batch
+    FLAGS['train_batch_size'] = 40 # number of points per batch
     
-    FLAGS['loss_type'] = 'l2' # loss type    
+    FLAGS['loss_type'] = 'l1' # loss type    
     FLAGS['c_reg'] = 1e-7 # L2 regularization strength   
     FLAGS['drop_prob'] = 0.0 # dropout probability at training time   
      

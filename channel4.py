@@ -13,15 +13,15 @@ seed_no = 3
 np.random.seed(seed_no)
 fsize = 3
 
-Ny = 128
-Re = 500
-nu = 1 * 10**(-4) # from the data file
+Ny = 384
+Re = 2000
+nu = 2.3 * 10**(-5) # from the data file
 
 
 # Filenames
-filepath_mean = 'data/couette/re0500/LM_Couette_R0500_100PI_mean_prof.dat'
-filepath_fluc = 'data/couette/re0500/LM_Couette_R0500_100PI_vel_fluc_prof.dat'
-filepath_tke  = 'data/couette/re0500/LM_Couette_R0500_100PI_RSTE_k_prof.dat'
+filepath_mean = 'data/channel/re2000/LM_Channel_2000_mean_prof.dat'
+filepath_fluc = 'data/channel/re2000/LM_Channel_2000_vel_fluc_prof.dat'
+filepath_tke  = 'data/channel/re2000/LM_Channel_2000_RSTE_k_prof.dat'
 
 
 # Load data
@@ -154,7 +154,7 @@ plt.plot(step_list, dev_loss_list[:,0], label='Dev')
 plt.xlabel('Step')
 plt.ylabel('Loss')
 plt.legend(loc = 'upper right')
-plt.savefig(f'figs/couette/loss{seed_no}.png', bbox_inches='tight')
+plt.savefig(f'figs/channel/loss4_{seed_no}.png', bbox_inches='tight')
 
 
 plt.figure()
@@ -163,12 +163,12 @@ plt.semilogx(y_raw * Re, bij_raw[:,0,1],'-',label='DNS')
 plt.ylabel(r'$b_{uv}$')
 plt.xlabel(r'$y^+$')
 plt.legend(loc='lower left')
-plt.savefig(f'figs/couette/tbnn_log_{seed_no}.png', bbox_inches='tight')
+plt.savefig(f'figs/channel/tbnn4_log_{seed_no}.png', bbox_inches='tight')
 
 plt.figure()
 plt.plot(y_test * Re, b_pred[:,0,1],'x', label='TBNN')
 plt.plot(y_raw * Re, bij_raw[:,0,1],'-',label='DNS')
 plt.ylabel(r'$b_{uv}$')
 plt.xlabel(r'$y^+$')
-plt.legend(loc='lower left')
-plt.savefig(f'figs/couette/tbnn_linear_{seed_no}.png', bbox_inches='tight')
+plt.legend(loc='lower right')
+plt.savefig(f'figs/channel/tbnn4_linear_{seed_no}.png', bbox_inches='tight')

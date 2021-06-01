@@ -13,6 +13,8 @@ seed_no = 1
 np.random.seed(seed_no)
 fsize = 3
 
+# fix viscosity 
+
 Ny = 256
 Re = 1000
 Ny_test = 192
