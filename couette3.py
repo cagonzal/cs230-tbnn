@@ -9,12 +9,16 @@ import process_raw_data as pd
 import apply_tbnn as apptb
 
 # Input/Settings
-seed_no = 3
+seed_no = 1
 np.random.seed(seed_no)
 fsize = 3
 
+# fix viscosity 
+
 Ny = 128
 Re = 500
+Ny_test = 96
+Re_test = 220
 nu = 1 * 10**(-4) # from the data file
 
 
@@ -23,11 +27,19 @@ filepath_mean = 'data/couette/re0500/LM_Couette_R0500_100PI_mean_prof.dat'
 filepath_fluc = 'data/couette/re0500/LM_Couette_R0500_100PI_vel_fluc_prof.dat'
 filepath_tke  = 'data/couette/re0500/LM_Couette_R0500_100PI_RSTE_k_prof.dat'
 
+filepath_mean_test = 'data/couette/re0220/LM_Couette_R0220_020PI_mean_prof.dat'
+filepath_fluc_test = 'data/couette/re0220/LM_Couette_R0220_020PI_vel_fluc_prof.dat'
+filepath_tke_test  = 'data/couette/re0220/LM_Couette_R0220_020PI_RSTE_k_prof.dat'
+
 
 # Load data
 y_raw, U_raw, dUdy_raw = ld.load_mean_data(filepath_mean, Ny)
 uus_raw, tke_raw = ld.load_fluc_data(filepath_fluc, Ny)
 eps_raw = ld.load_tke_data(filepath_tke, Ny)
+
+y_test, U_test, dUdy_test = ld.load_mean_data(filepath_mean_test, Ny_test)
+uus_test, tke_test = ld.load_fluc_data(filepath_fluc_test, Ny_test)
+eps_test = ld.load_tke_data(filepath_tke_test, Ny_test)
 
 
 # Filter for synthetic RANS
@@ -37,7 +49,6 @@ dUdy_filt = pd.rans_filter(dUdy_raw, fsize)
 uus_filt  = pd.rans_filter(uus_raw,  fsize)
 tke_filt  = pd.rans_filter(tke_raw,  fsize)
 eps_filt  = pd.rans_filter(eps_raw,  fsize)
-
 
 # Shuffle data
 shuffler = np.random.permutation(Ny)
@@ -68,19 +79,12 @@ uus_train  = uus_filt_sh[0:ind_train,:]
 tke_train  = tke_filt_sh[0:ind_train]
 eps_train  = eps_filt_sh[0:ind_train]
 
-y_dev    = y_raw_sh[ind_train:ind_dev]
-U_dev    = U_raw_sh[ind_train:ind_dev]
-dUdy_dev = dUdy_raw_sh[ind_train:ind_dev]
-uus_dev  = uus_raw_sh[ind_train:ind_dev,:]
-tke_dev  = tke_raw_sh[ind_train:ind_dev]
-eps_dev  = eps_raw_sh[ind_train:ind_dev]
-
-y_test    = y_raw_sh[ind_dev:]
-U_test    = U_raw_sh[ind_dev:]
-dUdy_test = dUdy_raw_sh[ind_dev:]
-uus_test  = uus_raw_sh[ind_dev:,:]
-tke_test  = tke_raw_sh[ind_dev:]
-eps_test  = eps_raw_sh[ind_dev:]
+y_dev    = y_raw_sh[ind_train:]
+U_dev    = U_raw_sh[ind_train:]
+dUdy_dev = dUdy_raw_sh[ind_train:]
+uus_dev  = uus_raw_sh[ind_train:,:]
+tke_dev  = tke_raw_sh[ind_train:]
+eps_dev  = eps_raw_sh[ind_train:]
 
 Ntrain = U_train.shape[0]
 Ndev   = U_dev.shape[0]
@@ -125,7 +129,7 @@ lam_dev, tb_dev     = pd.compute_qoi(  sij_dev,   oij_dev,   Ndev)
 lam_test, tb_test   = pd.compute_qoi( sij_test,  oij_test,  Ntest)
 
 # save terminal output to file
-fout = open('output1.txt','w')
+fout = open('output.txt','w')
 sys.stdout = fout
 printInfo()
 
@@ -136,6 +140,10 @@ best_dev_loss, end_dev_loss, step_list, train_loss_list, dev_loss_list = apptb.t
 print("")
     
 # Apply the trained network
+print("gradu has shape " + str(gradu_test.shape))
+print("eddy_visc has shape " + str(nut_test.shape))
+print("tke has shape " + str(tke_test.shape)) 
+
 print("")
 print("Applying trained TBNN on baseline Re_tau=550 channel data...")
 b_pred, g = apptb.applyNetwork(lam_test, tb_test, bij_test, gradu_test, nut_test, tke_test)
@@ -154,21 +162,21 @@ plt.plot(step_list, dev_loss_list[:,0], label='Dev')
 plt.xlabel('Step')
 plt.ylabel('Loss')
 plt.legend(loc = 'upper right')
-plt.savefig(f'figs/couette/loss1_{seed_no}.png', bbox_inches='tight')
+plt.savefig(f'figs/couette/loss3_{seed_no}.png', bbox_inches='tight')
 
 
 plt.figure()
-plt.semilogx(y_test * Re, b_pred[:,0,1],'x', label='TBNN')
+plt.semilogx(y_test * Re_test, b_pred[:,0,1],'x', label='TBNN')
 plt.semilogx(y_raw * Re, bij_raw[:,0,1],'-',label='DNS')
 plt.ylabel(r'$b_{uv}$')
 plt.xlabel(r'$y^+$')
 plt.legend(loc='lower left')
-plt.savefig(f'figs/couette/tbnn1_log_{seed_no}.png', bbox_inches='tight')
+plt.savefig(f'figs/couette/tbnn3_log_{seed_no}.png', bbox_inches='tight')
 
 plt.figure()
 plt.plot(y_test * Re, b_pred[:,0,1],'x', label='TBNN')
 plt.plot(y_raw * Re, bij_raw[:,0,1],'-',label='DNS')
 plt.ylabel(r'$b_{uv}$')
 plt.xlabel(r'$y^+$')
-plt.legend(loc='lower left')
-plt.savefig(f'figs/couette/tbnn1_linear_{seed_no}.png', bbox_inches='tight')
+plt.legend(loc='lower right')
+plt.savefig(f'figs/couette/tbnn3_linear_{seed_no}.png', bbox_inches='tight')

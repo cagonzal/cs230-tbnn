@@ -106,6 +106,12 @@ sij_dev, oij_dev     = pd.compute_rate_tensors(  gradu_dev,   Ndev)
 sij_test, oij_test   = pd.compute_rate_tensors( gradu_test,  Ntest)
 sij_raw, oij_raw     = pd.compute_rate_tensors(  gradu_raw,     Ny)
 
+# Normalize rate tensors
+sij_train, oij_train = pd.normalize_rate_tensors(sij_train, oij_train, tke_train, eps_train, Ny)
+sij_dev, oij_dev = pd.normalize_rate_tensors(sij_dev, oij_dev, tke_dev, eps_dev, Ny)
+sij_test, oij_test = pd.normalize_rate_tensors(sij_test, oij_test, tke_test, eps_test, Ny)
+sij_raw, oij_raw = pd.normalize_rate_tensors(sij_raw, oij_raw, tke_raw, eps_raw, Ny)
+
 # Anisotropy tensor
 aij_train, bij_train = pd.compute_bij(uus_train, tke_train, Ntrain)
 aij_dev, bij_dev     = pd.compute_bij(  uus_dev,   tke_dev,   Ndev)
@@ -165,4 +171,12 @@ plt.semilogx(y_raw * Re, bij_raw[:,0,1],'-',label='DNS')
 plt.ylabel(r'$b_{uv}$')
 plt.xlabel(r'$y^+$')
 plt.legend(loc='lower left')
-plt.savefig(f'figs/channel/tbnn3_{seed_no}.png', bbox_inches='tight')
+plt.savefig(f'figs/channel/tbnn3_log_{seed_no}.png', bbox_inches='tight')
+
+plt.figure()
+plt.plot(y_test * Re, b_pred[:,0,1],'x', label='TBNN')
+plt.plot(y_raw * Re, bij_raw[:,0,1],'-',label='DNS')
+plt.ylabel(r'$b_{uv}$')
+plt.xlabel(r'$y^+$')
+plt.legend(loc='lower right')
+plt.savefig(f'figs/channel/tbnn3_linear_{seed_no}.png', bbox_inches='tight')
