@@ -9,7 +9,7 @@ import process_raw_data as pd
 import apply_tbnn as apptb
 
 # Input/Settings
-seed_no = 3
+seed_no = 4
 np.random.seed(seed_no)
 fsize = 3
 
@@ -158,5 +158,5 @@ plt.plot(y_test, b_pred[:,0,1],'x', label='TBNN')
 plt.plot(y_raw, bij_raw[:,0,1],'-',label='DNS')
 plt.ylabel(r'$b_{12}$')
 plt.xlabel(r'$y$')
-plt.legend(loc='lower left')
+plt.legend(loc='upper right')
 plt.savefig(f'figs/couette/tbnn1_linear_{seed_no}.png', bbox_inches='tight')
