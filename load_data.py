@@ -11,12 +11,12 @@ def load_shs_data(filepath):
 
     # fluc data
     uus = np.zeros([Ny, 6])
-    uus[:,1] = data['uu']
-    uus[:,2] = data['vv']
-    uus[:,3] = data['ww']
-    uus[:,4] = data['uv']
-    uus[:,5] = data['uw']
-    uus[:,6] = data['vw']
+    uus[:,0] = data['uu']
+    uus[:,1] = data['vv']
+    uus[:,2] = data['ww']
+    uus[:,3] = data['uv']
+    uus[:,4] = data['uw']
+    uus[:,5] = data['vw']
 
     tke = data['tke']
 
