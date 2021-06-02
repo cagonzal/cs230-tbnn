@@ -7,6 +7,7 @@ def load_shs_data(filepath):
     y = data['y']
     U = data['u1'] 
     dUdy = data['du1']
+    Ny = y.shape[0]
 
     # fluc data
     uus = np.zeros([Ny, 6])
@@ -21,9 +22,7 @@ def load_shs_data(filepath):
 
     # tke data
     eps = data['eps']
-
-    Ny = y.shape[0]
-
+ 
     return Ny, y, U, dUdy, uus, tke, eps
 
 
