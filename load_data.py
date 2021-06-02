@@ -3,25 +3,28 @@ import numpy as np
 def load_shs_data(filepath):
     data = np.load(filepath)
 
-    # mean data
+    # get size (only want half width)
     y = data['y']
-    U = data['u1'] 
-    dUdy = data['du1']
-    Ny = y.shape[0]
+    Ny = int(y.shape[0]/2)
+
+    # mean data
+    y = data['y'][0:Ny]+1
+    U = data['u1'][0:Ny]
+    dUdy = data['du1'][0:Ny]
 
     # fluc data
     uus = np.zeros([Ny, 6])
-    uus[:,0] = data['uu']
-    uus[:,1] = data['vv']
-    uus[:,2] = data['ww']
-    uus[:,3] = data['uv']
-    uus[:,4] = data['uw']
-    uus[:,5] = data['vw']
+    uus[:,0] = data['uu'][0:Ny]
+    uus[:,1] = data['vv'][0:Ny]
+    uus[:,2] = data['ww'][0:Ny]
+    uus[:,3] = data['uv'][0:Ny]
+    uus[:,4] = data['uw'][0:Ny]
+    uus[:,5] = data['vw'][0:Ny]
 
-    tke = data['tke']
+    tke = data['tke'][0:Ny]
 
     # tke data
-    eps = data['eps']
+    eps = data['eps'][0:Ny]
  
     return Ny, y, U, dUdy, uus, tke, eps
 

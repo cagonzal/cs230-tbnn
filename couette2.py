@@ -9,19 +9,17 @@ import process_raw_data as pd
 import apply_tbnn as apptb
 
 # Input/Settings
-seed_no = 3
+seed_no = 5
 np.random.seed(seed_no)
 fsize = 3
 
-Ny = 96
-Re = 220
-nu = 2.5 * 10**(-4) # from the data file
-
+Ny = 128
+Re = 500
 
 # Filenames
-filepath_mean = 'data/couette/re0220/LM_Couette_R0220_020PI_mean_prof.dat'
-filepath_fluc = 'data/couette/re0220/LM_Couette_R0220_020PI_vel_fluc_prof.dat'
-filepath_tke  = 'data/couette/re0220/LM_Couette_R0220_020PI_RSTE_k_prof.dat'
+filepath_mean = 'data/couette/re0500/LM_Couette_R0500_100PI_mean_prof.dat'
+filepath_fluc = 'data/couette/re0500/LM_Couette_R0500_100PI_vel_fluc_prof.dat'
+filepath_tke  = 'data/couette/re0500/LM_Couette_R0500_100PI_RSTE_k_prof.dat'
 
 
 # Load data
@@ -42,13 +40,6 @@ eps_filt  = pd.rans_filter(eps_raw,  fsize)
 # Shuffle data
 shuffler = np.random.permutation(Ny)
 
-y_raw_sh    = y_raw[shuffler]
-U_raw_sh    = U_raw[shuffler]
-dUdy_raw_sh = dUdy_raw[shuffler]
-uus_raw_sh  = uus_raw[shuffler,:]
-tke_raw_sh  = tke_raw[shuffler]
-eps_raw_sh  = eps_raw[shuffler]
-
 y_filt_sh    = y_filt[shuffler]
 U_filt_sh    = U_filt[shuffler]
 dUdy_filt_sh = dUdy_filt[shuffler]
@@ -68,19 +59,19 @@ uus_train  = uus_filt_sh[0:ind_train,:]
 tke_train  = tke_filt_sh[0:ind_train]
 eps_train  = eps_filt_sh[0:ind_train]
 
-y_dev    = y_raw_sh[ind_train:ind_dev]
-U_dev    = U_raw_sh[ind_train:ind_dev]
-dUdy_dev = dUdy_raw_sh[ind_train:ind_dev]
-uus_dev  = uus_raw_sh[ind_train:ind_dev,:]
-tke_dev  = tke_raw_sh[ind_train:ind_dev]
-eps_dev  = eps_raw_sh[ind_train:ind_dev]
+y_dev    = y_filt_sh[ind_train:ind_dev]
+U_dev    = U_filt_sh[ind_train:ind_dev]
+dUdy_dev = dUdy_filt_sh[ind_train:ind_dev]
+uus_dev  = uus_filt_sh[ind_train:ind_dev,:]
+tke_dev  = tke_filt_sh[ind_train:ind_dev]
+eps_dev  = eps_filt_sh[ind_train:ind_dev]
 
-y_test    = y_raw_sh[ind_dev:]
-U_test    = U_raw_sh[ind_dev:]
-dUdy_test = dUdy_raw_sh[ind_dev:]
-uus_test  = uus_raw_sh[ind_dev:,:]
-tke_test  = tke_raw_sh[ind_dev:]
-eps_test  = eps_raw_sh[ind_dev:]
+y_test    = y_filt_sh[ind_dev:]
+U_test    = U_filt_sh[ind_dev:]
+dUdy_test = dUdy_filt_sh[ind_dev:]
+uus_test  = uus_filt_sh[ind_dev:,:]
+tke_test  = tke_filt_sh[ind_dev:]
+eps_test  = eps_filt_sh[ind_dev:]
 
 Ntrain = U_train.shape[0]
 Ndev   = U_dev.shape[0]
@@ -94,25 +85,22 @@ Ntest  = U_test.shape[0]
 gradu_train = pd.compute_gradu(dUdy_train, Ntrain)
 gradu_dev   = pd.compute_gradu(  dUdy_dev,   Ndev)
 gradu_test  = pd.compute_gradu( dUdy_test,  Ntest)
-gradu_raw   = pd.compute_gradu(  dUdy_raw,     Ny)
 
 # Rate tensors
 sij_train, oij_train = pd.compute_rate_tensors(gradu_train, Ntrain)
 sij_dev, oij_dev     = pd.compute_rate_tensors(  gradu_dev,   Ndev)
 sij_test, oij_test   = pd.compute_rate_tensors( gradu_test,  Ntest)
-sij_raw, oij_raw     = pd.compute_rate_tensors(  gradu_raw,     Ny)
 
 # Normalize rate tensors
 sij_train, oij_train = pd.normalize_rate_tensors(sij_train, oij_train, tke_train, eps_train, Ny)
 sij_dev, oij_dev = pd.normalize_rate_tensors(sij_dev, oij_dev, tke_dev, eps_dev, Ny)
 sij_test, oij_test = pd.normalize_rate_tensors(sij_test, oij_test, tke_test, eps_test, Ny)
-sij_raw, oij_raw = pd.normalize_rate_tensors(sij_raw, oij_raw, tke_raw, eps_raw, Ny)
 
 # Anisotropy tensor
 aij_train, bij_train = pd.compute_bij(uus_train, tke_train, Ntrain)
 aij_dev, bij_dev     = pd.compute_bij(  uus_dev,   tke_dev,   Ndev)
 aij_test, bij_test   = pd.compute_bij( uus_test,  tke_test,  Ntest)
-aij_raw, bij_raw     = pd.compute_bij(   uus_raw,  tke_raw,     Ny)
+_, bij_raw           = pd.compute_bij(   uus_raw,  tke_raw,     Ny)
 
 # Eddy viscosity
 nut_train = pd.compute_nut(aij_train, sij_train, Ntrain)
@@ -125,7 +113,7 @@ lam_dev, tb_dev     = pd.compute_qoi(  sij_dev,   oij_dev,   Ndev)
 lam_test, tb_test   = pd.compute_qoi( sij_test,  oij_test,  Ntest)
 
 # save terminal output to file
-fout = open('output1.txt','w')
+fout = open('logs/couette1.txt','w')
 sys.stdout = fout
 printInfo()
 
@@ -160,15 +148,15 @@ plt.savefig(f'figs/couette/loss2_{seed_no}.png', bbox_inches='tight')
 plt.figure()
 plt.semilogx(y_test * Re, b_pred[:,0,1],'x', label='TBNN')
 plt.semilogx(y_raw * Re, bij_raw[:,0,1],'-',label='DNS')
-plt.ylabel(r'$b_{uv}$')
+plt.ylabel(r'$b_{12}$')
 plt.xlabel(r'$y^+$')
 plt.legend(loc='lower left')
 plt.savefig(f'figs/couette/tbnn2_log_{seed_no}.png', bbox_inches='tight')
 
 plt.figure()
-plt.plot(y_test * Re, b_pred[:,0,1],'x', label='TBNN')
-plt.plot(y_raw * Re, bij_raw[:,0,1],'-',label='DNS')
-plt.ylabel(r'$b_{uv}$')
-plt.xlabel(r'$y^+$')
+plt.plot(y_test, b_pred[:,0,1],'x', label='TBNN')
+plt.plot(y_raw, bij_raw[:,0,1],'-',label='DNS')
+plt.ylabel(r'$b_{12}$')
+plt.xlabel(r'$y$')
 plt.legend(loc='lower left')
 plt.savefig(f'figs/couette/tbnn2_linear_{seed_no}.png', bbox_inches='tight')
