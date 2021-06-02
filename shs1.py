@@ -153,7 +153,7 @@ plt.plot(step_list, train_loss_list,    label='Train')
 plt.plot(step_list, dev_loss_list[:,0], label='Dev')
 plt.xlabel('Step')
 plt.ylabel('Loss')
-plt.legend(loc = 'upper right')
+plt.legend(loc = 'lower left')
 plt.savefig(f'figs/shs/loss1_{seed_no}.png', bbox_inches='tight')
 
 
