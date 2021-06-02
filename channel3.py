@@ -9,7 +9,7 @@ import process_raw_data as pd
 import apply_tbnn as apptb
 
 # Input/Settings
-seed_no = 1
+seed_no = 3
 np.random.seed(seed_no)
 fsize = 3
 
@@ -129,7 +129,7 @@ lam_dev, tb_dev     = pd.compute_qoi(  sij_dev,   oij_dev,   Ndev)
 lam_test, tb_test   = pd.compute_qoi( sij_test,  oij_test,  Ntest)
 
 # save terminal output to file
-fout = open('output.txt','w')
+fout = open('logs/channel3.txt','w')
 sys.stdout = fout
 printInfo()
 

@@ -9,7 +9,7 @@ import process_raw_data as pd
 import apply_tbnn as apptb
 
 # Input/Settings
-seed_no = 1
+seed_no = 3
 np.random.seed(seed_no)
 fsize = 3
 

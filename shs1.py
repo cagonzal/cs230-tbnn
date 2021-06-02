@@ -127,6 +127,25 @@ print("")
 print("Training TBNN on baseline Re_tau=550 channel data...")
 best_dev_loss, end_dev_loss, step_list, train_loss_list, dev_loss_list = apptb.trainNetwork(lam_train, tb_train, bij_train, lam_dev, tb_dev, bij_dev)
 print("")
+
+
+# MOVED FOR DEBUGGING
+# Loss variables
+step_list = np.array(step_list)
+train_loss_list = np.array(train_loss_list)
+# for some reason, dev_loss_list.shape = [Ndev , 4]
+dev_loss_list = np.array(dev_loss_list)
+
+# Plot
+plt.figure()
+plt.plot(step_list, train_loss_list,    label='Train')
+plt.plot(step_list, dev_loss_list[:,0], label='Dev')
+plt.xlabel('Step')
+plt.ylabel('Loss')
+plt.legend(loc = 'upper right')
+plt.savefig(f'figs/shs/loss1_{seed_no}.png', bbox_inches='tight')
+# END MOVED FOR DEBUGGING
+
     
 # Apply the trained network
 print("")

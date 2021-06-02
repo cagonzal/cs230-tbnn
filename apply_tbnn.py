@@ -18,7 +18,7 @@ def trainNetwork(x_train, tb_train, b_train, x_dev, tb_dev, b_dev,
     FLAGS['num_layers'] = 25 # number of hidden layers 8 
     FLAGS['num_neurons'] = 100 # number of hidden units in each layer 30 
     
-    FLAGS['learning_rate'] = 2.5e-5 # learning rate for SGD algorithm
+    FLAGS['learning_rate'] = 5.0e-5 # learning rate for SGD algorithm
     FLAGS['num_epochs'] = 2000 # maximum number of epochs to run
     FLAGS['early_stop_dev'] = 20 # after this many evaluations without improvement, stop training           
     FLAGS['eval_every'] = 100 # when to evaluate losses

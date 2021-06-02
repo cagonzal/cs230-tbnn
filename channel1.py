@@ -125,7 +125,7 @@ lam_dev, tb_dev     = pd.compute_qoi(  sij_dev,   oij_dev,   Ndev)
 lam_test, tb_test   = pd.compute_qoi( sij_test,  oij_test,  Ntest)
 
 # save terminal output to file
-fout = open('output1.txt','w')
+fout = open('logs/channel1.txt','w')
 sys.stdout = fout
 printInfo()
 
