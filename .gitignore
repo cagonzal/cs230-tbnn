@@ -1,4 +1,4 @@
-Icon
+Icon*
 .DS_Store
 __pycache__
 checkpoints
@@ -9,3 +9,4 @@ checkpoints
 *.jpg
 *.png
 *.txt
+*.npz
